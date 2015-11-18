@@ -1,0 +1,49 @@
+From 0c70f037f80dde2117ea50463743c3a634e07f02 Mon Sep 17 00:00:00 2001
+From: Chao Sun <chao.sun@cloudera.com>
+Date: Mon, 5 Oct 2015 13:12:45 -0700
+Subject: [PATCH 269/275] Revert "HIVE-10083 - SMBJoin fails in case one table
+ is uninitialized (Na via Chao)"
+
+This reverts commit 15d35b5df39b7a352198aee84f75848d4f2067df.
+---
+ .../hive/ql/optimizer/AbstractBucketJoinProc.java  |   24 +++++++++-----------
+ 1 file changed, 11 insertions(+), 13 deletions(-)
+
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/optimizer/AbstractBucketJoinProc.java b/ql/src/java/org/apache/hadoop/hive/ql/optimizer/AbstractBucketJoinProc.java
+index bc22307..9b87430 100644
+--- a/ql/src/java/org/apache/hadoop/hive/ql/optimizer/AbstractBucketJoinProc.java
++++ b/ql/src/java/org/apache/hadoop/hive/ql/optimizer/AbstractBucketJoinProc.java
+@@ -495,19 +495,17 @@ private void fillMappingBigTableBucketFileNameToSmallTableBucketFileNames(
+       for (int sindex = 0; sindex < smallTblBucketNums.size(); sindex++) {
+         int smallTblBucketNum = smallTblBucketNums.get(sindex);
+         List<String> smallTblFileNames = smallTblFilesList.get(sindex);
+-        if (smallTblFileNames.size() > 0) {
+-          if (bigTblBucketNum >= smallTblBucketNum) {
+-            // if the big table has more buckets than the current small table,
+-            // use "MOD" to get small table bucket names. For example, if the big
+-            // table has 4 buckets and the small table has 2 buckets, then the
+-            // mapping should be 0->0, 1->1, 2->0, 3->1.
+-            int toAddSmallIndex = bindex % smallTblBucketNum;
+-            resultFileNames.add(smallTblFileNames.get(toAddSmallIndex));
+-          } else {
+-            int jump = smallTblBucketNum / bigTblBucketNum;
+-            for (int i = bindex; i < smallTblFileNames.size(); i = i + jump) {
+-              resultFileNames.add(smallTblFileNames.get(i));
+-            }
++        if (bigTblBucketNum >= smallTblBucketNum) {
++          // if the big table has more buckets than the current small table,
++          // use "MOD" to get small table bucket names. For example, if the big
++          // table has 4 buckets and the small table has 2 buckets, then the
++          // mapping should be 0->0, 1->1, 2->0, 3->1.
++          int toAddSmallIndex = bindex % smallTblBucketNum;
++          resultFileNames.add(smallTblFileNames.get(toAddSmallIndex));
++        } else {
++          int jump = smallTblBucketNum / bigTblBucketNum;
++          for (int i = bindex; i < smallTblFileNames.size(); i = i + jump) {
++            resultFileNames.add(smallTblFileNames.get(i));
+           }
+         }
+       }
+-- 
+1.7.9.5
+

@@ -1,0 +1,31 @@
+From 7871b3787a0b2cf3f27899f0ff09b83c6faac7a8 Mon Sep 17 00:00:00 2001
+From: Chao Sun <sunchao@apache.org>
+Date: Fri, 26 Jun 2015 11:46:26 -0700
+Subject: [PATCH 164/275] CDH-28929 - CDH5.4.x Hive build broken
+
+This issue is caused by backporting HIVE-10437, which also depends on HIVE-9298.
+Hive-9298 is a fairly large patch, and has its own dependencies. Since HIVE-10437
+just needs one line from the latter, here, instead of backporting HIVE-9298, we
+just manually added that one line.
+In future, if we are doing backporting or rebasing, this should be resolved
+automatically.
+---
+ .../apache/hadoop/hive/serde/serdeConstants.java   |    2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/serdeConstants.java b/serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/serdeConstants.java
+index 8d3595b..e70d0c4 100644
+--- a/serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/serdeConstants.java
++++ b/serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/serdeConstants.java
+@@ -111,6 +111,8 @@
+ 
+   public static final String LIST_COLUMN_TYPES = "columns.types";
+ 
++  public static final String TIMESTAMP_FORMATS = "timestamp.formats";
++
+   public static final Set<String> PrimitiveTypes = new HashSet<String>();
+   static {
+     PrimitiveTypes.add("void");
+-- 
+1.7.9.5
+

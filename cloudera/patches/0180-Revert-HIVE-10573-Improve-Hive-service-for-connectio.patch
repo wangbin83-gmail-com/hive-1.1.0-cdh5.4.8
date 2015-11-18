@@ -1,0 +1,32 @@
+From e768dd95a70e4476cee17b229b80bde911562c5a Mon Sep 17 00:00:00 2001
+From: Chao Sun <sunchao@apache.org>
+Date: Mon, 6 Jul 2015 16:13:43 -0700
+Subject: [PATCH 180/275] Revert "HIVE-10573 - Improve Hive service for
+ connection (Chao, reviewed by Thejas)"
+
+Revert because this commit doesn't include unit tests - replaced with HIVE-9934 + HIVE-10572
+
+This reverts commit b1a324675ba50622dd7f087feb2182764d558acb.
+---
+ .../auth/LdapAuthenticationProviderImpl.java       |    5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java b/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java
+index 4e2ef90..7292cd9 100644
+--- a/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java
++++ b/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java
+@@ -53,11 +53,6 @@ public void Authenticate(String user, String password) throws AuthenticationExce
+       user  = user + "@" + ldapDomain;
+     }
+ 
+-    if (password == null || password.isEmpty() || password.getBytes()[0] == 0) {
+-      throw new AuthenticationException("Error validating LDAP user:" +
+-          " a null or blank password has been provided");
+-    }
+-
+     // setup the security principal
+     String bindDN;
+     if (baseDN == null) {
+-- 
+1.7.9.5
+

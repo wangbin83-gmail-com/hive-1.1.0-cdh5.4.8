@@ -1,0 +1,26 @@
+From 581f74a6483a5fba397aa527bbd836ffacb2bb1f Mon Sep 17 00:00:00 2001
+From: Jimmy Xiang <jxiang@cloudera.com>
+Date: Mon, 31 Aug 2015 11:35:34 -0700
+Subject: [PATCH 230/275] CLOUDERA-BUILD: CDH-30510: Fix unit test
+ CDH5.4.x-Hive-1.1.0 for CDH5.4.7
+
+---
+ pom.xml |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pom.xml b/pom.xml
+index 663786e..f9dc884 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -855,7 +855,7 @@
+             <LANG>en_US.UTF-8</LANG>
+             <HADOOP_CLASSPATH>${test.tmp.dir}/conf:${basedir}/${hive.path.to.root}/conf</HADOOP_CLASSPATH>
+             <HIVE_HADOOP_TEST_CLASSPATH>${test.hive.hadoop.classpath}</HIVE_HADOOP_TEST_CLASSPATH>
+-            <SPARK_SUBMIT_CLASSPATH>${spark.home}/lib/spark-assembly-${spark.version}-hadoop2.4.0.jar:${test.hive.hadoop.classpath}</SPARK_SUBMIT_CLASSPATH>
++            <SPARK_SUBMIT_CLASSPATH>${spark.home}/lib/spark-assembly-${spark.version}-hadoop2.6.0-cdh5.4.6-SNAPSHOT.jar:${test.hive.hadoop.classpath}</SPARK_SUBMIT_CLASSPATH>
+             <SPARK_OSX_TEST_OPTS>-Dorg.xerial.snappy.tempdir=/tmp -Dorg.xerial.snappy.lib.name=libsnappyjava.jnilib</SPARK_OSX_TEST_OPTS>
+             <PATH>${env.PATH}${test.extra.path}</PATH>
+           </environmentVariables>
+-- 
+1.7.9.5
+

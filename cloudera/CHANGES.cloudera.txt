@@ -1,0 +1,2484 @@
+commit f99a2d6005d46da37cd6f11eeac40f8a47dcbcf9
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Wed Oct 14 10:08:49 2015 -0700
+
+    Branch for CDH5.4.8
+
+commit 5b18f997aa3968af8ae16df00b1347daed296c92
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Tue Oct 6 17:23:44 2015 -0500
+
+    Revert "CDH:30268: HIVE-11802: Float-point numbers are displayed with different precision in Beeline/JDBC (Sergio Pena, reviewed by Carl Steinbach)"
+    
+    This reverts commit 80355e87f109cbf997ef7608544fab76b42375c8.
+
+commit e8165ef9fdf4b80112204ad8303746cde894e6c0
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Tue Oct 6 17:23:36 2015 -0500
+
+    Revert "HIVE-11832: HIVE-11802 breaks compilation in JDK 8"
+    
+    This reverts commit 94d360046f71a6d9fcf56f9349ce637de5246587.
+
+commit f6b9e8db43bfc98686836bdd5be465c7b6ba4ef7
+Author: Sergey Shelukhin <sershe@apache.org>
+Date:   Tue Apr 14 01:11:43 2015 +0000
+
+    HIVE-10122 : Hive metastore filter-by-expression is broken for non-partition expressions (Sergey Shelukhin, reviewed by Ashutosh Chauhan)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1673329 13f79535-47bb-0310-9956-ffa450edef68
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/optimizer/ppr/PartitionPruner.java
+    	ql/src/test/results/clientpositive/annotate_stats_part.q.out
+    	ql/src/test/results/clientpositive/list_bucket_dml_1.q.out
+    	ql/src/test/results/clientpositive/list_bucket_dml_11.q.java1.7.out
+    	ql/src/test/results/clientpositive/list_bucket_dml_3.q.out
+    	ql/src/test/results/clientpositive/list_bucket_query_multiskew_1.q.out
+    	ql/src/test/results/clientpositive/list_bucket_query_multiskew_2.q.out
+    	ql/src/test/results/clientpositive/list_bucket_query_oneskew_1.q.out
+    	ql/src/test/results/clientpositive/list_bucket_query_oneskew_2.q.out
+    	ql/src/test/results/clientpositive/list_bucket_query_oneskew_3.q.out
+
+commit c246bc1db5fa386e13191f202734ab17a1c80590
+Author: xzhang <xzhang@xzdt>
+Date:   Mon Oct 5 14:26:56 2015 -0700
+
+    Revert "HIVE-11835: Type decimal(1,1) reads 0.0, 0.00, etc from text file as NULL (Reviewed by Szehon)"
+    
+    This reverts commit 80e27f2d7d1550d637b571021c2b7767f1b6ed27.
+
+commit 12fe580cbca5cf1c6fa0369ecdf757d6ac3527f8
+Author: xzhang <xzhang@xzdt>
+Date:   Mon Oct 5 14:26:50 2015 -0700
+
+    Revert "HIVE-11835: Type decimal(1,1) reads 0.0, 0.00, etc from text file as NULL (Reviewed by Szehon)"
+    
+    This reverts commit 1861781276e3134566b1bef81f883158f2e7c709.
+
+commit 0c70f037f80dde2117ea50463743c3a634e07f02
+Author: Chao Sun <chao.sun@cloudera.com>
+Date:   Mon Oct 5 13:12:45 2015 -0700
+
+    Revert "HIVE-10083 - SMBJoin fails in case one table is uninitialized (Na via Chao)"
+    
+    This reverts commit 15d35b5df39b7a352198aee84f75848d4f2067df.
+
+commit 15d35b5df39b7a352198aee84f75848d4f2067df
+Author: Sun Chao <sunchao@apache.org>
+Date:   Wed Apr 1 16:27:50 2015 +0000
+
+    HIVE-10083 - SMBJoin fails in case one table is uninitialized (Na via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1670718 13f79535-47bb-0310-9956-ffa450edef68
+
+commit c4868779822d4fd36fde0f9182a6556852c9d94a
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Mon Oct 5 05:46:20 2015 -0700
+
+    HIVE-11835: Type decimal(1,1) reads 0.0, 0.00, etc from text file as NULL (Reviewed by Szehon)
+    -- Add the forgotten new data file
+
+commit e3e271e6b306246bacfb28dae13320df669a9f47
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Mon Oct 5 05:42:20 2015 -0700
+
+    HIVE-11835: Type decimal(1,1) reads 0.0, 0.00, etc from text file as NULL (Reviewed by Szehon)
+
+commit d27405a41aba6d674897a1b9c0e560115710a08f
+Author: ctang <ctang@cloudera.com>
+Date:   Thu Oct 1 22:24:13 2015 -0400
+
+    CDH-31943: Backport HIVE-9867: Migrate usage of deprecated Calcite methods (only part for HIVE-8398)
+
+commit b34703ea262e924844edd107422505846e770a8e
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Thu Oct 1 11:33:39 2015 -0700
+
+    CDH-29870: more HIVE-11982 : Some test cases for union all fail with recent changes (Yongzhi Chen via Szehon)
+
+commit ac016572f6b410cce04a4ff83a83d51b72874bb1
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Thu Oct 1 15:29:36 2015 -0700
+
+    HIVE-11995 : Remove repetitively setting permissions in insert/load overwrite partition (Chaoyu Tang via Szehon)
+
+commit caa0a56fb397728d2a460d13d33f0f890907d151
+Author: ctang <ctang@cloudera.com>
+Date:   Thu Oct 1 16:21:48 2015 -0400
+
+    CDH-32321 Backport: HIVE-11926 Stats annotation might not extract stats for varchar/decimal columns
+
+commit 799689015361cdbbb7ececd38ebe44258353198f
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Tue Sep 15 16:39:50 2015 -0700
+
+    HIVE-11745 : Alter table Exchange partition with multiple partition_spec is not working (Yongzhi Chen via Szehon)
+
+commit db6595afe0905f9e4bf546a44798804920b5f89e
+Author: Swarnim Kulkarni <kulkarni.swarnim@gmail.com>
+Date:   Tue Sep 8 21:59:00 2015 -0800
+
+    CDH-31761: HIVE-11590 : AvroDeserializer is very chatty (Swarnim Kulkarni via Xuefu Zhang)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+    
+    Conflicts:
+    	serde/src/java/org/apache/hadoop/hive/serde2/avro/AvroSerDe.java
+    
+    Change-Id: I83e2fb03532f76d240ac7e1a7d0db34358337091
+
+commit 7b9f5f6c86a4ff803d624865dd5a0e0a0f5d9f95
+Author: Brock Noland <brock@apache.org>
+Date:   Sun Sep 20 15:49:01 2015 -0700
+
+    CDH-32117:HIVE-11891 - Add basic performance logging to metastore calls (Brock via Szehon)
+    
+    Conflicts:
+    	metastore/src/java/org/apache/hadoop/hive/metastore/RetryingHMSHandler.java
+    	ql/src/java/org/apache/hadoop/hive/ql/Driver.java
+    	ql/src/java/org/apache/hadoop/hive/ql/exec/spark/SparkTask.java
+    	ql/src/java/org/apache/hadoop/hive/ql/exec/tez/RecordProcessor.java
+    	ql/src/java/org/apache/hadoop/hive/ql/exec/tez/ReduceRecordProcessor.java
+    	ql/src/java/org/apache/hadoop/hive/ql/io/CombineHiveInputFormat.java
+    	ql/src/java/org/apache/hadoop/hive/ql/io/HiveInputFormat.java
+    	ql/src/java/org/apache/hadoop/hive/ql/parse/spark/SparkCompiler.java
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/exec/spark/SparkPlan.java
+
+commit 32279dce5e2b8ddaac9fc2e9ac474ef1bb70281d
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Wed May 20 11:05:07 2015 -0700
+
+    CDH-31906: HIVE-8529: HiveSessionImpl#fetchResults should not try to fetch operation log when hive.server2.logging.operation.enabled is false (Yongzhi via Xuefu)
+
+commit e33219e5956028f5bb222a743fa102b41e37b110
+Author: Mohit Sabharwal <mohit@cloudera.com>
+Date:   Tue Sep 22 20:59:29 2015 -0700
+
+    CDH-31620 : HIVE-10980 : Merge of dynamic partitions loads all data to default partition (Illya Yalovyy via Ashutosh Chauhan)
+    
+        Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+        (cherry picked from commit ff1f5b1a7afc4c934bad2a39da217513760d0ba2)
+    
+    (cherry picked from commit 3eb3e40b1c099bd7676276bd2c7e797f52c189f5)
+
+commit a212c5bc557b470f6c2eea7f147f8b19dd3e745a
+Author: Chao Sun <sunchao@apache.org>
+Date:   Wed Sep 9 12:56:24 2015 -0700
+
+    HIVE-11696: Exception when table-level serde is Parquet while partition-level serde is JSON (Aihua Xu, reviewed by Chao Sun)
+
+commit ed151a89cb89bea66e9debaf358205316a33c70f
+Author: WangMeng <mengwang@qiyi.com>
+Date:   Wed Sep 16 21:00:00 2015 -0800
+
+    HIVE-11695 : If user have no permission to  create LOCAL DIRECTORY ，the Hql does not throw any exception and fail silently. (WangMeng via Ashutosh Chauhan)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit 6908b1a5b893c14223324d266f20fa6af091a323
+Author: Prasanth Jayachandran <j.prasanth.j@gmail.com>
+Date:   Wed Sep 16 01:08:02 2015 -0500
+
+    HIVE-11824: Insert to local directory causes staging directory to be copied (Prasanth Jayachandran reviewed by Ashutosh Chauhan)
+
+commit cc4d441a295c9c67157f66d518c8969069bca9f2
+Author: Aihua Xu <axu@cloudera.com>
+Date:   Thu Sep 17 10:31:35 2015 -0400
+
+    CDH-31499: Backport part of HIVE-11077 - Exchange partition does not properly populate fields for post/pre execute hooks.
+    Check in missing file.
+
+commit 5d697469fa44235eaf210e3859723f2d02d0d4b8
+Author: Reuben Kuhnert <reuben.kuhnert@cloudera.com>
+Date:   Fri Sep 18 18:55:46 2015 -0500
+
+    CDH-31712: Hive command is stuck loading.
+
+commit fdf8a81cdd0f6c94e0a6eabffc41f2600f69fae3
+Author: Reuben Kuhnert <reuben.kuhnert@cloudera.com>
+Date:   Fri Sep 18 10:04:23 2015 -0500
+
+    CLOUDERA-BUILD: CDH-31491: Sentry prevents HiveServer2 from showing permanent functions
+
+commit 7b1a781a210c1a900fd1162090f3833433e13dcf
+Author: Aihua Xu <axu@cloudera.com>
+Date:   Wed Sep 16 10:45:28 2015 -0400
+
+    CDH-31499: Backport part of HIVE-11077 - Exchange partition does not properly populate fields for post/pre execute hooks.
+
+commit bd114b8efd88dc87e076ec11a9e742e2f995fe4b
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed Sep 16 10:32:46 2015 -0500
+
+    CDH-31585: HIVE-11843: Hive qtests for Parquet PPD cretaed on CDH-30114 are failing on MR1
+
+commit 24a527debfb51152d7db5d3a6b892dcff1125f71
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Mon Sep 14 17:16:28 2015 -0500
+
+    CDH-30114: HIVE-11440: HIVE-11763: Create Parquet predicate push down (PPD) unit tests and q-tests
+
+commit 44405f75061a1ac275ab26d82766c1ba97bef41d
+Author: Ferdinand Xu <cheng.a.xu@intel.com>
+Date:   Mon Aug 31 21:07:10 2015 -0400
+
+    CDH-30495: HIVE-11504: Predicate pushing down doesn't work for float type for Parquet(Ferdinand Xu, reviewed by Sergio Pena and Owen O'Malley)
+
+commit 94d360046f71a6d9fcf56f9349ce637de5246587
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed Sep 16 11:22:27 2015 -0500
+
+    HIVE-11832: HIVE-11802 breaks compilation in JDK 8
+
+commit 80355e87f109cbf997ef7608544fab76b42375c8
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Tue Sep 15 10:40:45 2015 -0500
+
+    CDH:30268: HIVE-11802: Float-point numbers are displayed with different precision in Beeline/JDBC (Sergio Pena, reviewed by Carl Steinbach)
+
+commit ff8c04366dbe2092262f688fe8b343022dcc2bc5
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Tue Sep 8 11:20:27 2015 -0500
+
+    CDH-31174: HIVE-11618: Backport HIVE-11618: Correct the SARG api to reunify the PredicateLeaf.Type INTEGER and LONG
+
+commit 4077343971b6f64cc24649bbf2ac88749023948a
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Wed Sep 16 11:35:14 2015 -0700
+
+    CDH-31243 : HIVE-11816 : Upgrade groovy to 2.4.4
+
+commit 84cc94b28a7a5dfc3df21b692ce6dc4fc3e008ff
+Author: Sergey Shelukhin <sershe@apache.org>
+Date:   Thu Sep 3 19:57:40 2015 -0700
+
+    CDH-31436: HIVE-11657 : HIVE-2573 introduces some issues during metastore init (and CLI init) (Sergey Shelukhin, reviewed by Sushanth Sowmyan)
+    
+    Conflicts:
+    	metastore/src/java/org/apache/hadoop/hive/metastore/RetryingMetaStoreClient.java
+    	ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+
+commit 592e0131c065322c9f6912a9b32f505f284a1122
+Author: Gunther Hagleitner <gunther@apache.org>
+Date:   Wed Mar 18 23:51:31 2015 +0000
+
+    CDH-26679: HIVE-9984: JoinReorder's getOutputSize is exponential (Gopal V and Gunther Hagleitner)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1667641 13f79535-47bb-0310-9956-ffa450edef68
+    
+    Conflicts:
+    	common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+
+commit 1af82ad74d420057a25148e9825296876594a1df
+Author: Eugene Koifman <ekoifman@hortonworks.com>
+Date:   Fri May 22 13:28:13 2015 -0700
+
+    CDH-29235: HIVE-10658 - Insert with values clause may expose data that should be encrypted(Eugene Koifman, reviewed by Serio Pena)
+    
+    Conflicts:
+    	itests/src/test/resources/testconfiguration.properties
+    	ql/src/java/org/apache/hadoop/hive/ql/parse/QB.java
+    	ql/src/test/results/clientpositive/encrypted/encryption_insert_partition_static.q.out
+
+commit 46bbd09db45fe6a735f804faa36bf14c08d232ec
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Fri Sep 4 10:34:58 2015 -0700
+
+    CDH-31129: HIVE-11737: IndexOutOfBounds compiling query with duplicated groupby keys (Jimmy, reviewed by Szehon)
+
+commit 390e563053868014c77079cf728ba4e9a296debb
+Author: Reuben Kuhnert <reuben.kuhnert@cloudera.com>
+Date:   Tue Sep 8 11:40:13 2015 -0500
+
+    CLOUDERA-BUILD: OPSAPS-28063: hive.stats.collect.scancols needs to be set to true in HS2 to allow column level priviliges
+
+commit c28e1b123af77b6c3fe2b228c63d3e46074ee219
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Sat Aug 29 12:57:52 2015 -0700
+
+    CDH-31155 HIVE-10021: "Alter index rebuild" statements submitted through HiveServer2 fail when Sentry is enabled (Aihua Xu, reviewed by Chao Sun and Ashutosh Chauhan)
+
+commit c103cf53f0a92b2530808907dcaf6f780f7e73cf
+Author: Jason Dere <jdere@hortonworks.com>
+Date:   Mon Apr 27 11:37:43 2015 -0700
+
+    HIVE-10421: DROP TABLE with qualified table name ignores database name when checking partitions (Jason Dere via Thejas Nair)
+
+commit aac795d388368380047d0f85eb432e5fc24c0b2c
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Sun Apr 26 13:17:37 2015 -0700
+
+    CDH-30805: HIVE-10451 :  PTF deserializer fails if values are not used in reducer (Ashutosh Chauhan via Gopal V)
+
+commit c53c2b49d4b00bbd9c9a372e8cab7cb55f5618ee
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Tue Sep 1 11:48:36 2015 -0700
+
+    CDH-29960: HIVE-11712: Duplicate groupby keys cause ClassCastException (Jimmy, reviewed by Xuefu)
+
+commit 508a9a434a4eaab46efb1f66b4746e26679b390f
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Wed Sep 2 11:49:04 2015 -0700
+
+    CDH-30669: HIVE-11604 : HIVE return wrong results in some queries with PTF function (Yongzhi Chen via Szehon)
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/optimizer/IdentityProjectRemover.java
+    	ql/src/test/results/clientpositive/tez/explainuser_1.q.out
+
+commit 283e0e72950b50f4bdb080520d33809286a443cb
+Author: Sushanth Sowmyan <khorgath@gmail.com>
+Date:   Tue May 5 02:35:31 2015 -0700
+
+    HIVE-5545 : HCatRecord getInteger method returns String when used on Partition columns of type INT (Sushanth Sowmyan, reviewed by Jason Dere)
+
+commit 76d6fc01afae4f4f5d233b940294f6da550de85e
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Tue Sep 1 15:58:45 2015 -0700
+
+    Updating Maven version to 5.4.8-SNAPSHOT
+
+commit 581f74a6483a5fba397aa527bbd836ffacb2bb1f
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Mon Aug 31 11:35:34 2015 -0700
+
+    CLOUDERA-BUILD: CDH-30510: Fix unit test CDH5.4.x-Hive-1.1.0 for CDH5.4.7
+
+commit 7c8ccbffb69e827e2cbce1b7f47159ac0fcaaca9
+Author: Jason Dere <jdere@hortonworks.com>
+Date:   Mon Aug 3 17:51:35 2015 -0700
+
+    HIVE-10319: Hive CLI startup takes a long time with a large number of databases (Nezih Yigitbasi, reviewed by Jason Dere)
+    
+    Conflicts:
+    	metastore/if/hive_metastore.thrift
+    	metastore/src/gen/thrift/gen-cpp/ThriftHiveMetastore.cpp
+    	metastore/src/gen/thrift/gen-cpp/hive_metastore_types.cpp
+    	metastore/src/gen/thrift/gen-cpp/hive_metastore_types.h
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/AbortTxnRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/AddDynamicPartitions.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/AddPartitionsRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/AddPartitionsResult.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/AggrStats.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/AlreadyExistsException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/BinaryColumnStatsData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/BooleanColumnStatsData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/CheckLockRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ColumnStatistics.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ColumnStatisticsDesc.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ColumnStatisticsObj.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/CommitTxnRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/CompactionRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ConfigValSecurityException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/CurrentNotificationEventId.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Database.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Date.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/DateColumnStatsData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Decimal.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/DecimalColumnStatsData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/DoubleColumnStatsData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/DropPartitionsExpr.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/DropPartitionsRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/DropPartitionsResult.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/EnvironmentContext.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/FieldSchema.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/FireEventRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/FireEventResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Function.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GetOpenTxnsInfoResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GetOpenTxnsResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GetPrincipalsInRoleRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GetPrincipalsInRoleResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GetRoleGrantsForPrincipalRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GetRoleGrantsForPrincipalResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GrantRevokePrivilegeRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GrantRevokePrivilegeResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GrantRevokeRoleRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/GrantRevokeRoleResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/HeartbeatRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/HeartbeatTxnRangeRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/HeartbeatTxnRangeResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/HiveObjectPrivilege.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/HiveObjectRef.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Index.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/IndexAlreadyExistsException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/InsertEventRequestData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/InvalidInputException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/InvalidObjectException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/InvalidOperationException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/InvalidPartitionException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/LockComponent.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/LockRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/LockResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/LongColumnStatsData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/MetaException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/NoSuchLockException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/NoSuchObjectException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/NoSuchTxnException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/NotificationEvent.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/NotificationEventRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/NotificationEventResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/OpenTxnRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/OpenTxnsResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Order.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Partition.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionListComposingSpec.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionSpec.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionSpecWithSharedSD.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionWithoutSD.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionsByExprRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionsByExprResult.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionsStatsRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PartitionsStatsResult.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PrincipalPrivilegeSet.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PrivilegeBag.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/PrivilegeGrantInfo.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ResourceUri.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Role.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/RolePrincipalGrant.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Schema.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/SerDeInfo.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/SetPartitionsStatsRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ShowCompactRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ShowCompactResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ShowCompactResponseElement.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ShowLocksRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ShowLocksResponse.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ShowLocksResponseElement.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/SkewedInfo.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/StorageDescriptor.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/StringColumnStatsData.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Table.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/TableStatsRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/TableStatsResult.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/ThriftHiveMetastore.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/TxnAbortedException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/TxnInfo.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/TxnOpenException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Type.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/UnknownDBException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/UnknownPartitionException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/UnknownTableException.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/UnlockRequest.java
+    	metastore/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/metastore/api/Version.java
+    	metastore/src/gen/thrift/gen-php/metastore/ThriftHiveMetastore.php
+    	metastore/src/gen/thrift/gen-php/metastore/Types.php
+    	metastore/src/gen/thrift/gen-py/hive_metastore/ThriftHiveMetastore-remote
+    	metastore/src/gen/thrift/gen-py/hive_metastore/ThriftHiveMetastore.py
+    	metastore/src/gen/thrift/gen-rb/hive_metastore_types.rb
+    	ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Adjacency.java
+    	ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Graph.java
+    	ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Operator.java
+    	ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Query.java
+    	ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/QueryPlan.java
+    	ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Stage.java
+    	ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Task.java
+    	serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/test/InnerStruct.java
+    	serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/test/ThriftTestObj.java
+    	serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde2/thrift/test/Complex.java
+    	serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde2/thrift/test/IntString.java
+    	serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde2/thrift/test/MegaStruct.java
+    	serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde2/thrift/test/MiniStruct.java
+    	serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde2/thrift/test/SetIntString.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service/HiveClusterStatus.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service/HiveServerException.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service/ThriftHive.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TArrayTypeEntry.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TBinaryColumn.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TBoolColumn.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TBoolValue.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TByteColumn.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TByteValue.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCLIService.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCancelDelegationTokenReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCancelDelegationTokenResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCancelOperationReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCancelOperationResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCloseOperationReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCloseOperationResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCloseSessionReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TCloseSessionResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TColumnDesc.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TDoubleColumn.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TDoubleValue.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TExecuteStatementReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TExecuteStatementResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TFetchResultsReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TFetchResultsResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetCatalogsReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetCatalogsResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetColumnsReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetColumnsResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetDelegationTokenReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetDelegationTokenResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetFunctionsReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetFunctionsResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetInfoReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetInfoResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetOperationStatusReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetOperationStatusResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetResultSetMetadataReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetResultSetMetadataResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetSchemasReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetSchemasResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetTableTypesReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetTableTypesResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetTablesReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetTablesResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetTypeInfoReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TGetTypeInfoResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/THandleIdentifier.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TI16Column.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TI16Value.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TI32Column.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TI32Value.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TI64Column.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TI64Value.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TMapTypeEntry.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TOpenSessionReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TOpenSessionResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TOperationHandle.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TPrimitiveTypeEntry.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TRenewDelegationTokenReq.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TRenewDelegationTokenResp.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TRow.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TRowSet.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TSessionHandle.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TStatus.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TStringColumn.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TStringValue.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TStructTypeEntry.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TTableSchema.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TTypeDesc.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TTypeQualifiers.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TUnionTypeEntry.java
+    	service/src/gen/thrift/gen-javabean/org/apache/hive/service/cli/thrift/TUserDefinedTypeEntry.java
+    	service/src/gen/thrift/gen-py/hive_service/ThriftHive-remote
+
+commit f468d8ae57341221a69ebf06a0567e81db49ebe5
+Author: Szehon Ho <szehon@apache.org>
+Date:   Fri Apr 17 18:40:49 2015 +0000
+
+    CDH-30675: HIVE-9580 : Server returns incorrect result from JOIN ON VARCHAR columns (Aihua Xu via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1674378 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 9c22adb889ff72f054c34cb4947d191681a3bc6e
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Fri Jun 12 07:21:00 2015 -0700
+
+    CDH-30488: HIVE-10985: Value based windowing on timestamp and double can't handle NULL value (Aihua Xu via Ashutosh Chauhan)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit 46ac3301f94a3a2adbe2afb30b85d39dadca7a89
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Fri Jun 5 18:01:00 2015 -0700
+
+    HIVE-10906 : Value based UDAF function without orderby expression throws NPE (Aihua Xu via Ashutosh Chauhan)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit e37a88c372875f036ff9fe6927bf06a6fa99af30
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Fri Jun 5 13:31:00 2015 -0700
+
+    HIVE-10911 : Add support for date datatype in the value based windowing function (Aihua Xu via Ashutosh Chauhan)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit d52549a4b3d03be73fcdfd07009a29c215d82214
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Thu Apr 30 09:42:00 2015 -0700
+
+    HIVE-10140 : Window boundary is not compared correctly (Aihua Xu via Ashutosh Chauhan)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit fbb3df84fac99d3d495a1ae0017aa83d78b08be7
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Wed Aug 19 18:04:49 2015 -0700
+
+    CDH-30546: HIVE-11620: Fix several qtest output order (Jimmy, reviewed by Chao)
+
+commit 8a4d9009cb611a590b736074d6577e6ee5dd8b69
+Author: Yongzhi Chen <yongzhi_chen@hotmail.com>
+Date:   Wed Aug 19 18:22:52 2015 -0700
+
+    CDH-30498: HIVE-11502: Map side aggregation is extremely slow (Yongzhi Chen, reviewed by Chao Sun)
+
+commit 293f02ee706d649ba113081989cd57fb4737ef0e
+Author: vikram <vikram@hortonworks.com>
+Date:   Mon May 18 12:46:49 2015 -0700
+
+    CDH-30656 HIVE-10719: Hive metastore failure when alter table rename is attempted. (Vikram Dixit K, reviewed by Thejas Nair, Sergey Shelukhin)
+
+commit bd58a33461dcc996270b64129e547bccef5f592e
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Fri Mar 27 05:10:53 2015 +0000
+
+    CDH-30562: HIVE-10085: Lateral view on top of a view throws RuntimeException (Aihua Xu via Ashutosh Chauhan)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1669513 13f79535-47bb-0310-9956-ffa450edef68
+
+commit c0475af2e69b7bfe6b741b21aac5ceb9b7b9c90e
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Wed Aug 19 13:25:46 2015 -0700
+
+    CLOUDERA-BUILD: CDH-30546: [unit test] Many unit tests failing due to similar plan diffs on CDH5.5 and CDH5.4.X
+
+commit b1dd87194cf0f61b74c3aa2650fdeaa37fee503d
+Author: Jason Dere <jdere@apache.org>
+Date:   Thu Apr 16 17:35:21 2015 +0000
+
+    CDH-30540: HIVE-10288: Cannot call permanent UDFs (Chinna Rao Lalam via Jason Dere)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1674115 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 6fd7ea8e040fff234e24b055e4fc9c1c0e567430
+Author: jpullokk <jpullokk@apache.org>
+Date:   Tue Jun 23 11:11:03 2015 -0700
+
+    CDH-30281: HIVE-10996: Aggregation / Projection over Multi-Join Inner Query producing incorrect results (Jesus Camacho Rodriguez via Laljo John Pullokkaran)
+
+commit 53938242b3a477dcba86dfc54ab01c53e3cc8edb
+Author: Prasanth J <prasanthj@apache.org>
+Date:   Mon Feb 2 19:03:26 2015 +0000
+
+    HIVE-9512: HIVE-9327 causing regression in stats annotation (Jesus Camacho Rodriguez via Prasanth Jayachandran)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1656542 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 651cd5150a75bdc1b89c716f4735e17ac36b98f8
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Wed Jan 28 06:25:44 2015 +0000
+
+    HIVE-9327 : CBO (Calcite Return Path): Removing Row Resolvers from ParseContext (Jesus Camacho Rodriguez via Ashutosh Chauhan)
+
+commit 7e376d60edb6b21802eab7ce48c737c8feb2ca36
+Author: Naveen Gangam <ngangam@cloudera.com>
+Date:   Wed Aug 12 14:13:40 2015 -0400
+
+    CDH-30242 Trimming down hive-jdbc-standalone jar of unrelated files
+
+commit f5d0a3a2127ec805658cb6f19d17a94a6b88de10
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Fri Aug 7 12:01:30 2015 -0700
+
+    CDH-24365: HIVE-7476 : CTAS does not work properly for s3
+    
+    Includes HIVE-10994 as part of conflict resolution.
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+
+commit 39e890257b6a6a9b83f59f96f874269cf2a5e659
+Author: Jesus Camacho Rodriguez <jcamacho@apache.org>
+Date:   Wed Jul 22 18:26:38 2015 +0100
+
+    CDH-28587 : HIVE-9613: Left join query plan outputs wrong column when using subquery (Jesus Camacho Rodriguez, reviewed by Gunther Hagleitner)
+    
+    (cherry picked from commit afab133233b716151b7d9af39fd7c25d2817e8a9)
+    
+    Conflicts:
+    	ql/src/test/queries/clientpositive/join42.q
+    	ql/src/test/results/clientpositive/join42.q.out
+    
+    (cherry picked from commit 85b617ed1e8f4dee7ea40bdd87b9d672551b5799)
+
+commit c027e420970bf352576a31a6816431eb88e11d97
+Author: Thejas Nair <thejas@hortonworks.com>
+Date:   Mon Jun 1 08:41:28 2015 -0700
+
+    CDH-30282: HIVE-10875 : Select query with view in subquery adds underlying table as direct input (Thejas Nair, reviewed by Ashutosh Chauhan)
+
+commit 82bcdae3d8e25012ea3c7263ec11002ef3772960
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Tue Aug 4 11:23:34 2015 -0700
+
+    CDH-29436: HIVE-11250: Change in spark.executor.instances (and others) doesn't take effect after RSC is launched for HS2 (Jimmy, reviewed by Xuefu)
+
+commit 78012dcdd215827254972ead29192d8b54e9ef2a
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Wed Aug 5 15:10:31 2015 -0700
+
+    CLOUDERA-BUILD: CDH-30172: [unit test] testCliDriver_vector_aggregate_without_gby failing on CDH5.4.x and CDH5.5
+
+commit b91365e4370506ec01ed5ee1f4c7e906199702c2
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Wed Aug 5 10:22:31 2015 -0700
+
+    HIVE-11433: NPE for a multiple inner join query
+
+commit ec2dae7bd22ec51f0b2b790cf496dd2c71b8e805
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed Aug 5 10:56:52 2015 -0500
+
+    CLOUDERA-BUILD: CDH-30191: Revert "PROPOSED CDH-29853: HIVE-11139: QTest combine2_hadoop20.q fails when using -Phadoop-1 profile due to HIVE-11139"
+    
+    This reverts commit 3c443c3404d53a842b54127f0ad889a8ad127eb1.
+
+commit 25a8d259cfc5416899a50f27c800a522eff92bd6
+Author: ctang <ctang.ma@gmail.com>
+Date:   Sat Jun 20 16:23:00 2015 -0400
+
+    HIVE-10972: DummyTxnManager always locks the current database in shared mode, which is incorrect (Aihua Xu via Chaoyu Tang, reviewd by Alan Gates)
+
+commit 717c33325654ddc6e3ed3e8035513bed863edec0
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Thu Jul 30 09:38:31 2015 -0700
+
+    HIVE-11258 - The function drop_database_core() of HiveMetaStore.java may not drop all the tables (Aihua Xu, reviewed by Chao Sun)
+
+commit 55772611cc7799a89c1603c3f9bca6e4d533bc68
+Author: Hari Subramaniyan <harisankar@apache.org>
+Date:   Tue Jul 21 03:03:45 2015 -0700
+
+    CDH-29656: Backport HIVE-11172 : Vectorization wrong results for aggregate query with where clause without group by (Hari Subramaniyan, reviewed by Matt McCline)
+
+commit 05c77db13431726a9aafe44d55dc6b73ad939ec3
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Fri Jul 31 17:04:51 2015 -0500
+
+    CDH-30053: Backport HIVE-11401: Predicate push down does not work with Parquet when partitions are in the expression
+
+commit 58832fae1de2a766f8cec265aaddb12bfeb97004
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Fri Jul 31 14:01:14 2015 -0500
+
+    CDH-30055: Backport HIVE-10553: Remove hardcoded Parquet references from SearchArgumentImpl
+
+commit 44e9c16372067c430998f2bcbf4dcdf8094d494b
+Author: Szehon Ho <szehon@apache.org>
+Date:   Fri Apr 10 18:06:49 2015 +0000
+
+    CDH-30052: HIVE-10252 : Make PPD work for Parquet in row group level (Dong Chen via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1672718 13f79535-47bb-0310-9956-ffa450edef68
+
+commit c90bc8e3e3c995b35ad502f515a182be04b2f995
+Author: Ferdinand Xu <cheng.a.xu@intel.com>
+Date:   Wed Jul 8 20:58:22 2015 -0400
+
+    CDH-29988: HIVE-11203: Beeline force option doesn't force execution when errors occurred in a script.(Ferdinand, reviewed by Xuefu Zhang)
+
+commit 08a16d409d3a5e19925066c38c801a9eff68fd9f
+Author: Pengcheng Xiong <pxiong@hortonworks.com>
+Date:   Fri Jul 24 18:03:23 2015 +0200
+
+    HIVE-11333: ColumnPruner prunes columns of UnionOperator that should be kept (Pengcheng Xiong, via Jesus Camacho Rodriguez)
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/optimizer/ColumnPrunerProcCtx.java
+    	ql/src/test/results/clientpositive/spark/union16.q.out
+    	ql/src/test/results/clientpositive/spark/union2.q.out
+    	ql/src/test/results/clientpositive/spark/union9.q.out
+    	ql/src/test/results/clientpositive/spark/union_view.q.out
+    	ql/src/test/results/clientpositive/tez/union2.q.out
+    	ql/src/test/results/clientpositive/tez/union9.q.out
+    	ql/src/test/results/clientpositive/tez/vector_null_projection.q.out
+    	ql/src/test/results/clientpositive/union16.q.out
+    	ql/src/test/results/clientpositive/union2.q.out
+    	ql/src/test/results/clientpositive/union9.q.out
+    	ql/src/test/results/clientpositive/union_view.q.out
+    	ql/src/test/results/clientpositive/vector_null_projection.q.out
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/optimizer/ColumnPrunerProcCtx.java
+
+commit e058d75e04840b81e94c9d4e0dc1a778e1e1b13d
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Mon Jul 27 11:34:12 2015 -0700
+
+    CDH-29870: HIVE-11271 : java.lang.IndexOutOfBoundsException when union all with if function (Yongzhi Chen via Szehon)
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/optimizer/ColumnPrunerProcCtx.java
+
+commit 2880acbabd294542b70a1f5fb49df7a9c6c92e49
+Author: xzhang <xzhang@xzdt>
+Date:   Tue Jul 28 11:39:37 2015 -0700
+
+    CDH-29924: HIVE-11288: Avro SerDe InstanceCache returns incorrect schema (Greg via Xuefu)
+    
+    Conflicts:
+    	serde/src/java/org/apache/hadoop/hive/serde2/avro/InstanceCache.java
+    	serde/src/test/org/apache/hadoop/hive/serde2/avro/TestInstanceCache.java
+
+commit 3c443c3404d53a842b54127f0ad889a8ad127eb1
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Mon Jul 27 16:35:54 2015 -0500
+
+    PROPOSED CDH-29853: HIVE-11139: QTest combine2_hadoop20.q fails when using -Phadoop-1 profile due to HIVE-11139
+
+commit f51962d0809d5dea4ebf57e474c41839bdf2aef0
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Thu Jul 16 15:03:40 2015 -0700
+
+    HIVE-11255 - get_table_objects_by_name() in HiveMetaStore.java needs to retrieve table objects in multiple batches (Aihua Xu, reviewed by Chao Sun)
+    
+    Conflicts:
+    	metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+
+commit 138aaebb53fa1ae76de68d6aff902bab2b5c0845
+Author: ctang <ctang@cloudera.com>
+Date:   Tue Jul 21 22:20:02 2015 -0400
+
+    CDH-29648: HIVE-9500: Support nested structs over 24 levels
+    (combined upstream two commits)
+
+commit 933c8619ebb06521d7363f829567a16563630896
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Fri Feb 6 01:49:10 2015 +0000
+
+    CDH-29658: HIVE-6099 : Multi insert does not work properly with distinct count (Ashutosh Chauhan via Navis)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1657736 13f79535-47bb-0310-9956-ffa450edef68
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java
+    	ql/src/java/org/apache/hadoop/hive/ql/plan/GroupByDesc.java
+    	ql/src/test/results/clientpositive/spark/groupby10.q.out
+    	ql/src/test/results/clientpositive/spark/groupby11.q.out
+    	ql/src/test/results/clientpositive/spark/groupby8.q.out
+    	ql/src/test/results/clientpositive/spark/groupby8_map.q.out
+    	ql/src/test/results/clientpositive/spark/groupby8_map_skew.q.out
+    	ql/src/test/results/clientpositive/spark/groupby8_noskew.q.out
+    	ql/src/test/results/clientpositive/spark/groupby9.q.out
+    	ql/src/test/results/clientpositive/spark/groupby_multi_insert_common_distinct.q.out
+    	ql/src/test/results/clientpositive/union17.q.out
+
+commit 091b862a05f84064a56693b60359321f045323e6
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Mon Jul 20 12:04:45 2015 -0700
+
+    Updating Maven version to 5.4.6-SNAPSHOT
+
+commit 0b71a45abab7c2b6085278713c722340789d09c0
+Author: ctang <ctang.ma@gmail.com>
+Date:   Thu Jul 16 14:34:28 2015 -0400
+
+    CDH-29558: HIVE-11216: UDF GenericUDFMapKeys throws NPE when a null map value is passed in (Yibing Shi via Chaoyu Tang, reviewed by Szehon Ho
+
+commit 0079961d1d75c579741a9f66b665e8f85b68f0d5
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed Jul 15 09:47:06 2015 -0500
+
+    CDH-29090: HIVE-11174: Hive does not treat floating point signed zeros as equal (-0.0 should equal 0.0 according to IEEE floating point spec) (Sergio Pena, reviewed by Xuefu Zhang)
+
+commit f3f8f11d6b6b603aa43fa1c2950044969ec7d042
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Mon Jul 13 14:56:56 2015 -0500
+
+    CDH-29331: HIVE-11239: UT failure: TestEncryptedHDFSCliDriver.testCliDriver_encryption_insert_partition_static
+
+commit c08a66c31a7f315fa42a031a2f913ef701c55fc1
+Author: Chao Sun <sunchao@apache.org>
+Date:   Mon Jul 13 09:36:22 2015 -0700
+
+    HIVE-11194 - Exchange partition on external tables should fail with error message when target folder already exists (Aihua Xu, reviewd by Chao Sun)
+
+commit 53d6d1cd1636f51e380dd49bb2346696ba8d883f
+Author: Reuben Kuhnert <reuben.kuhnert@cloudera.com>
+Date:   Fri Jul 10 14:58:15 2015 -0500
+
+    CLOUDERA-BUILD: CDH-29333: HIVE-10270: UT failure: TestCliDriver.testCliDriver_decimal_precision2
+
+commit 89e08cfa143a820cd5c6ced44185cb6abad94a0a
+Author: Vaibhav Gumashta <vgumashta@apache.org>
+Date:   Thu Jul 9 22:53:21 2015 +0530
+
+    HIVE-10895: ObjectStore does not close Query objects in some calls, causing a potential leak in some metastore db resources (Aihua Xu reviewed by Chaoyu Tang, Sergey Shelukhin, Vaibhav Gumashta)
+    
+    Conflicts:
+    	metastore/src/java/org/apache/hadoop/hive/metastore/ObjectStore.java
+
+commit 9fb5eba025893027201f1d3a90bc076230af0dd9
+Author: Reuben Kuhnert <sircodesalot@gmail.com>
+Date:   Thu Jul 9 14:58:43 2015 -0500
+
+    CDH-29104: [unit test] Hive test TestCliDriver.testCliDriver_decimal_precision2 failing q test plan diff
+
+commit 781c898f650c0b2ab73a0438eabe6a3dc1b63e53
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Tue Jul 7 17:05:15 2015 -0500
+
+    CDH-29062: HIVE-10717: Fix failed qtest encryption_insert_partition_static test in Jenkin
+
+commit 1c15caf4e29b9afd258e154676d1f50a4462d01b
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Thu Jul 2 11:28:24 2015 -0700
+
+    CDH-29178: HIVE-11150 : Remove wrong warning message related to chgrp (Yongzhi Chen via Szehon)
+
+commit 2d3550e8287b5c4ce95c9aac01447fd1c8f28d09
+Author: Chao Sun <sunchao@apache.org>
+Date:   Fri May 1 17:12:08 2015 -0700
+
+    HIVE-10572 - Improve Hive service test to check empty string (Chao, reviewed by Thejas)
+
+commit 4bb82266941cc44acf5dba9f1e256d394a7921cf
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Tue Mar 17 22:06:22 2015 +0000
+
+    HIVE-9934: Vulnerability in LdapAuthenticationProviderImpl enables HiveServer2 client to degrade the authentication mechanism to none, allowing authentication without password (Chao via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1667417 13f79535-47bb-0310-9956-ffa450edef68
+
+commit e768dd95a70e4476cee17b229b80bde911562c5a
+Author: Chao Sun <sunchao@apache.org>
+Date:   Mon Jul 6 16:13:43 2015 -0700
+
+    Revert "HIVE-10573 - Improve Hive service for connection (Chao, reviewed by Thejas)"
+    
+    Revert because this commit doesn't include unit tests - replaced with HIVE-9934 + HIVE-10572
+    
+    This reverts commit b1a324675ba50622dd7f087feb2182764d558acb.
+
+commit 73f20cc390e3116c885f473101e350e24619dbe2
+Author: lirui <lirui@unknown>
+Date:   Mon Mar 23 06:46:44 2015 +0000
+
+    HIVE-10006: RSC has memory leak while execute multi queries.[Spark Branch] (Chengxiang via Rui, reviewed by Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1668521 13f79535-47bb-0310-9956-ffa450edef68
+
+commit c931a2175a99580215c6087efa74d775f28ec0a6
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Mon Jul 6 14:58:00 2015 -0700
+
+    Updating Maven version to 5.4.5-SNAPSHOT
+
+commit 9c4d53d7d37104e7bc75837826812de90598379a
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Mon Jul 6 14:41:44 2015 -0700
+
+    Updating Maven version to 5.4.4-SNAPSHOT
+
+commit bc1ff91d439916cfc325d3717386df799f286dbb
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Mon Jul 6 13:35:44 2015 -0700
+
+    Updating Maven version to 5.4.5-SNAPSHOT
+
+commit b1a324675ba50622dd7f087feb2182764d558acb
+Author: Chao Sun <sunchao@apache.org>
+Date:   Fri May 1 17:08:04 2015 -0700
+
+    HIVE-10573 - Improve Hive service for connection (Chao, reviewed by Thejas)
+
+commit 911bdb63df2eccb7a08a4f5bc59d7b2491f37a9d
+Author: Alexander Pivovarov <apivovarov@gmail.com>
+Date:   Wed May 13 23:27:02 2015 -0700
+
+    CDH-29061:HIVE-10706 Make vectorized_timestamp_funcs test more stable (Alexander Pivovarov, reviewed by Jason Dere)
+
+commit a221be26d149ee07e5be5f27edaba681675659f8
+Author: ctang <ctang.ma@gmail.com>
+Date:   Thu Jul 2 09:56:40 2015 -0400
+
+    HIVE-11157: Hive.get(HiveConf) returns same Hive object to different user sessions (Chaoyu Tang, reviewed by Jimmy Xiang)
+
+commit 68ac542005de1f8b73080c1a0f7d6ed74bc50ec0
+Author: Reuben Kuhnert <reuben.kuhnert@cloudera.com>
+Date:   Thu Jul 2 13:46:04 2015 -0500
+
+    CDH-27517: HIVE-10270: Cannot use Decimal constants less than 0.1BD (Jason Dere, reviewed by Gunther Hagleitner)
+
+commit 504d9fb4813b65d906552b7ed3318a4dbc1e6513
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Thu Jul 2 10:09:31 2015 -0700
+
+    CDH-29086: Spark should be enabled for Spark related unit tests
+
+commit 8590cf673f4560d54f1c14f43ac213b7866d603b
+Author: xzhang <xzhang@xzdt>
+Date:   Tue Jun 30 10:43:10 2015 -0700
+
+    HIVE-11100: Beeline should escape semi-colon in queries (Chaoyu via Xuefu)
+
+commit e830f22a07b6f389dff1deb457196ff2fdfdc8f9
+Author: Sushanth Sowmyan <khorgath@gmail.com>
+Date:   Wed May 20 15:24:02 2015 -0700
+
+    HIVE-10659 : Beeline command which contains semi-colon as a non-command terminator will fail (Hari Subramaniyan via Sushanth Sowmyan)
+
+commit edc6032d917890ece09131f5fb34aa1c75273b64
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Tue Jun 30 05:23:32 2015 -0700
+
+    HIVE-11095: SerDeUtils another bug ,when Text is reused (Xiaowei via Xuefu)
+
+commit 52dd3e7b9f1e40fb47624326dd2de2b8290d61ca
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Mon Jun 29 08:45:49 2015 -0700
+
+    HIVE-11112: ISO-8859-1 text output has fragments of previous longer rows appended (Yongzhi via Xuefu)
+
+commit 3b59d4d2752358f0d230e53932952ee6d77b1cee
+Author: Naveen Gangam <ngangam@cloudera.com>
+Date:   Fri May 22 19:49:00 2015 -0700
+
+    CDH-27943 HIVE-10808 : Inner join on Null throwing Cast Exception (Naveen Gangam via Ashutosh Chauhan)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit e3c1c96c94f90e023fb686d136742c77845e5533
+Author: Hari Subramaniyan <harisankar@apache.org>
+Date:   Tue May 26 10:19:03 2015 -0700
+
+    CDH-28838 HIVE-10801 : 'drop view' fails throwing java.lang.NullPointerException (Hari Subramaniyan, reviewed by Eugene Koifman)
+    
+    Conflicts:
+    	itests/src/test/resources/testconfiguration.properties
+
+commit 7871b3787a0b2cf3f27899f0ff09b83c6faac7a8
+Author: Chao Sun <sunchao@apache.org>
+Date:   Fri Jun 26 11:46:26 2015 -0700
+
+    CDH-28929 - CDH5.4.x Hive build broken
+    
+    This issue is caused by backporting HIVE-10437, which also depends on HIVE-9298.
+    Hive-9298 is a fairly large patch, and has its own dependencies. Since HIVE-10437
+    just needs one line from the latter, here, instead of backporting HIVE-9298, we
+    just manually added that one line.
+    In future, if we are doing backporting or rebasing, this should be resolved
+    automatically.
+
+commit 1ec14033a09a3ec91ebc4d2ed814eea80d8c907c
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Mon Apr 27 13:48:00 2015 -0700
+
+    HIVE-10437 : NullPointerException on queries where map/reduce is not involved on tables with partitions (Ashutosh Chauhan via Gunther Hagleitner)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit 0e788f60fceb9a5c519532504cd5d5bfdce8d3bc
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Tue Jun 23 12:47:37 2015 -0500
+
+    CDH-28906: HIVE-11062: Remove Exception stacktrace from Log.info when ACL is not supported. (Yongzhi Chen, reviewed by Sergio Pena)
+
+commit 87b70f143e8be40e356f81c98983f4c3c6f09e32
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Thu Jun 25 10:30:52 2015 -0700
+
+    HIVE-11109 Replication factor is not properly set in SparkHashTableSinkOperator [Spark Branch] (Rui via Jimmy)
+
+commit 623cdf0e338b40ab7de29a4c7b52a18a36133286
+Author: xzhang <xzhang@xzdt>
+Date:   Mon Jun 22 13:04:12 2015 -0700
+
+    HIVE-10594: Remote Spark client doesn't use Kerberos keytab to authenticate [Spark Branch] (Reviewed by Chao)
+
+commit 25534886e093480c5ef7389b089762119dcf6fa3
+Author: jpullokk <jpullokk@apache.org>
+Date:   Fri Jun 12 12:38:10 2015 -0700
+
+    HIVE-10841: [WHERE col is not null] does not work sometimes for queries with many JOIN statements (Laljo John Pullokkaran reviewd by Ashutosh Chauhan)
+
+commit b725d2826b25fe5e79a674298c0bf2f2d89fe29a
+Author: Eugene Koifman <ekoifman@hortonworks.com>
+Date:   Wed May 20 10:05:31 2015 -0700
+
+    HIVE-10629 Dropping table in an encrypted zone does not drop warehouse directory(Eugene Koifman, reviewed by Sergio Pena)
+    
+    Conflicts:
+    	metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+    	ql/src/test/results/clientpositive/encrypted/encryption_insert_partition_static.q.out
+
+commit ec8aa1ffd9a9d601c0b73cd101cfe2065f289d0d
+Author: Eugene Koifman <ekoifman@hortonworks.com>
+Date:   Thu May 14 10:29:00 2015 -0700
+
+    HIVE-10630:Renaming tables across encryption zones renames table even though the operation throws error (Eugene Koifman, reviewed by Sergio Pena and Ashutosh Chauhan)
+
+commit 43da78a8061fc7bcf9ac3f7f51dac89c33051eff
+Author: ctang <ctang.ma@gmail.com>
+Date:   Fri Jun 12 10:18:05 2015 -0400
+
+    HIVE-10977: No need to instantiate MetaStoreDirectSql when HMS DirectSql is disabled (Chaoyu Tang, reviewed by Xuefu Zhang and Sergey Shelukhin)
+
+commit 252e1c294ec882969556202850d6ac2d642d758c
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Thu Jun 11 10:02:02 2015 -0700
+
+    HIVE-10976 Redundant HiveMetaStore connect check in HS2 CLIService start (Chaoyu via Jimmy)
+
+commit 5da910f4fd933a16f2db6307ae176b6a14d78414
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Thu Jun 4 14:52:40 2015 -0700
+
+    HIVE-10956: HS2 leaks HMS connections (Jimmy, reviewed by Xuefu)
+
+commit 1b45a2b472f13e332bc36d33b660731c6c864429
+Author: Chao Sun <sunchao@apache.org>
+Date:   Thu Jun 4 13:54:59 2015 -0700
+
+    HIVE-10427 - collect_list() and collect_set() should accept struct types as argument (Chao Sun, reviewed by Alexander Pivovarov)
+
+commit ca4263ec14700a776889396b2dddf7ac28c31c9a
+Author: Jianyong Dai <daijy@apache.org>
+Date:   Thu Mar 26 17:11:15 2015 +0000
+
+    HIVE-9767: Fixes in Hive UDF to be usable in Pig (Daniel Dai)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1669371 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 0e4b903154caefdeb8f377e875fa9c71c9493683
+Author: Chao Sun <sunchao@apache.org>
+Date:   Sat May 30 09:29:38 2015 -0700
+
+    HIVE-10788 - Change sort_array to support non-primitive types (Chao Sun, reviewed by Alexander Pivovarov)
+    
+    This patch depends on another big patch (HIVE-9744), and it's very hard to backport it.
+    Since we only need two small functions from this patch, I just copied them to
+    GenericUDF.java.
+
+commit df0b519967ee94eeb1fd423461388380712d9c53
+Author: Gunther Hagleitner <gunther@apache.org>
+Date:   Fri Feb 13 02:28:14 2015 +0000
+
+    CDH-28104: HIVE-9665: Parallel move task optimization causes race condition (Gunther Hagleitner, reviewed by Thejas M Nair)
+
+commit 88c05e590de40288b09d830d8826222fef29a689
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Fri Jun 5 09:56:54 2015 -0700
+
+    Updating Maven version to 5.4.4-SNAPSHOT
+
+commit 20cec7d7d64c5db98d40e3037aa6d87d53d643c2
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Mon May 4 11:20:36 2015 -0700
+
+    HIVE-10571 : HiveMetaStoreClient should close existing thrift connection before its reconnect (Chaoyu Tang via Szehon)
+
+commit 11db35103934e9f7417dafa84a916034daa57188
+Author: Vaibhav Gumashta <vgumashta@apache.org>
+Date:   Sat May 30 13:38:34 2015 -0700
+
+    HIVE-10835: Concurrency issues in JDBC driver (Chaoyu Tang reviewed by Vaibhav Gumashta)
+
+commit eedcee51bf2ec7617375ac334d366c7dc14c1823
+Author: Aihua Xu <aihuaxu@gmail.com>
+Date:   Sat May 30 15:13:00 2015 -0700
+
+    HIVE-10802 : Table join query with some constant field in select fails (Aihua Xu via Ashutosh Chauhan)
+    
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/optimizer/ConstantPropagateProcFactory.java
+    	ql/src/test/results/clientpositive/spark/udf_in_file.q.out
+
+commit 2341b39a330a76757268fed12107efe8a75f2e1e
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed May 27 14:15:57 2015 -0500
+
+    CDH-28098: HIVE-10538: Fix NPE in FileSinkOperator from hashcode mismatch
+
+commit 7e15dbed86f5b5f2874fff62a22ef07e1f1d1574
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Wed May 27 11:15:05 2015 -0700
+
+    CDH-28126: HIVE-10771: 'separatorChar' has no effect in 'CREATE TABLE AS SELECT' statement (Yongzhi via Xuefu)
+
+commit 73c0b100f04bc934c9636aa7d791e2f7809e7d6d
+Author: Xuefu Zhang <xzhang@Cloudera.com>
+Date:   Wed May 20 11:14:33 2015 -0700
+
+    HIVE-10732: Hive JDBC driver does not close operation for metadata queries (Chaoyu via Xuefu)
+
+commit 9f417db184d43d25a85a61a1cce449203dd802bb
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Tue May 19 17:22:14 2015 -0700
+
+    Updating Maven version to 5.4.3-SNAPSHOT
+
+commit a577ce4cd26c6b19ca53d6771136027eccf19dd5
+Author: Aihua Xu <axu@cloudera.com>
+Date:   Mon May 18 12:13:28 2015 -0400
+
+    Revert "HIVE-5193 : Columnar Pushdown for RC/ORC File not happening in HCatLoader (Viraj Bhat via Sushanth Sowmyan)"
+    
+    This reverts commit ecd430d68e8bc1bdf1a1365780a819cb5d3f7fbc.
+    
+    Conflicts:
+    	hcatalog/hcatalog-pig-adapter/src/test/java/org/apache/hive/hcatalog/pig/TestHCatLoader.java
+
+commit 83b1391d6e10cd984b14d5520f497898d526f96d
+Author: Eugene Koifman <ekoifman@hortonworks.com>
+Date:   Fri May 1 09:27:21 2015 -0700
+
+    HIVE-10151 - insert into A select from B is broken when both A and B are Acid tables and bucketed the same way (Eugene Koifman, reviewed by Alan Gates)
+
+commit 40c5006a355864643015c81f9266857f00c7fcf2
+Author: Eugene Koifman <ekoifman@hortonworks.com>
+Date:   Tue Apr 28 20:11:56 2015 -0700
+
+    HIVE-10483 - insert overwrite partition deadlocks on itself with DbTxnManager (Eugene Koifman, reviewed by Alan Gates)
+
+commit 555e42b58552707774859651ddea55f0f2969ae8
+Author: Alan Gates <gates@hortonworks.com>
+Date:   Mon Apr 27 11:46:38 2015 -0700
+
+    HIVE-10050 Added backoff for deadlock retry.  Also make sure to reset the deadlock counter at appropriate points.
+
+commit 254ac2d878ec24002dfc03a0ec1c68946250df19
+Author: Eugene Koifman <ekoifman@apache.org>
+Date:   Thu Apr 16 17:58:38 2015 +0000
+
+    HIVE-10242 ACID: insert overwrite prevents create table command (Eugene Koifman, reviewed by Alan Gates)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1674119 13f79535-47bb-0310-9956-ffa450edef68
+    
+    Conflicts:
+    	hcatalog/src/test/e2e/templeton/deployers/env.sh
+    	ql/src/java/org/apache/hadoop/hive/ql/Driver.java
+
+commit 11d4127592de95ce3a851f2e354e6a848b723b52
+Author: Eugene Koifman <ekoifman@hortonworks.com>
+Date:   Tue Apr 28 16:07:44 2015 -0700
+
+    HIVE-10481 - ACID table update finishes but values not really updated if column names are not all lower case
+
+commit 6eee406332bb748c810be49c9850e6c449622c86
+Author: Eugene Koifman <ekoifman@apache.org>
+Date:   Wed Apr 1 19:53:56 2015 +0000
+
+    HIVE-10150 - delete from acidTbl where a in(select a from nonAcidOrcTbl) fails (Eugene Koifman, reviewed by Alan Gates)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1670764 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 2f5a99daf8f4f59c270b9b59340c1cf9b8ce828d
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Fri May 15 08:34:38 2015 -0700
+
+    HIVE-10721 SparkSessionManagerImpl leaks SparkSessions [Spark Branch] (Jimmy reviewed by Xuefu, Chengxiang)
+
+commit 198c30a5d3be2d73c063ae466e0a19bbe6c55fd8
+Author: xzhang <xzhang@xzdt>
+Date:   Thu May 14 14:20:11 2015 -0700
+
+    HIVE-10671: yarn-cluster mode offers a degraded performance from yarn-client [Spark Branch] (Rui via Xuefu, reviewed by Chengxiang)
+
+commit 76fe77fcfbb1a0fda43f5388300422bdcd6a493b
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Thu May 7 11:20:53 2015 -0700
+
+    HIVE-10453 : HS2 leaking open file descriptors when using UDFs (Yongzhi Chen via Szehon)
+
+commit e8d23bfe9da33dd13d5d2ac0dfec9bde4c3ce553
+Author: Navis Ryu <navis@apache.org>
+Date:   Fri Feb 13 05:55:16 2015 +0000
+
+    HIVE-2573 : Create per-session function registry (Navis reviewed by Jason Dere and Alexander Pivovarov)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1659461 13f79535-47bb-0310-9956-ffa450edef68
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+    	ql/src/java/org/apache/hadoop/hive/ql/metadata/Table.java
+    	ql/src/java/org/apache/hadoop/hive/ql/parse/IdentifiersParser.g
+
+commit 7ece0f6754d402e2d3bbaca025a9aae138cfbb41
+Author: Jason Dere <jdere@apache.org>
+Date:   Mon Feb 9 23:06:17 2015 +0000
+
+    HIVE-9520: Create NEXT_DAY UDF (Alexander Pivovarov via Jason Dere)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1658600 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 55cc0be01538cc1acb65de8cb051da57692a9366
+Author: Jason Dere <jdere@apache.org>
+Date:   Fri Feb 6 01:38:26 2015 +0000
+
+    HIVE-9143: select user(), current_user() (Alexander Pivovarov via Jason Dere)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1657735 13f79535-47bb-0310-9956-ffa450edef68
+
+commit e34904ecb762e11d7827e68f611d285847725a0b
+Author: Jason Dere <jdere@apache.org>
+Date:   Mon Feb 2 19:19:01 2015 +0000
+
+    HIVE-5472: support a simple scalar which returns the current timestamp (Jason Dere, reviewed by Thejas Nair)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1656544 13f79535-47bb-0310-9956-ffa450edef68
+
+commit d32ca3551a6a1830e9c418bea55df6f85eb16716
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Sun May 10 22:21:15 2015 -0500
+
+    CDH-27548 HIVE-10646 : ColumnValue does not handle NULL_TYPE (Yongzhi Chen via Szehon)
+
+commit 32c2e6bb3d8dff26a9193403f541add22193d89d
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Wed Apr 1 09:17:45 2015 -0700
+
+    CDH-26623 : Add new Hive config option to enable/disable running queries on Spark (execution.engine=spark)
+
+commit 92ce016c5f3a4d2aaebfe3c1c0c870fd4d3840f1
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Mon May 4 10:00:30 2015 -0500
+
+    CDH-27537 HIVE-10452: Followup fix for HIVE-10202 to restrict it it for script mode. (Naveen Gangam, reviewed by Sergio Pena)
+
+commit e2812b1603d03332cb5a4bc6f21db2a13776eac9
+Author: Jenkins <dev-kitchen@cloudera.com>
+Date:   Mon May 4 10:08:36 2015 -0700
+
+    Updating Maven version to 5.4.2-SNAPSHOT
+
+commit 485c0ea890513c7aad3536d1dc7fb2b6775c09a0
+Author: ctang <ctang@cloudera.com>
+Date:   Fri May 1 20:22:29 2015 -0400
+
+    CDH-24610: HIVE-10541: Beeline requires newline at the end of each query in a file
+
+commit a1da5b15b601878dab452b2f52fbce80a4e8663d
+Author: Prasad Mujumdar <prasadm@cloudera.com>
+Date:   Fri May 1 15:40:06 2015 -0700
+
+    CDH-17723. PROPOSED: HIVE-9625: Delegation tokens for HMS are not renewed
+
+commit 778a3a39778fd9d5d2399dbbad45d970b14eb2b0
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Wed Apr 22 16:06:00 2015 -0700
+
+    HIVE-10499 Ensure Session/ZooKeeperClient instances are closed (Jimmy, reviewed by Szehon)
+
+commit 8c805b5ffa077631b57ac516724908c8a3af2174
+Author: Xuefu Zhang <xzhang@xzlt>
+Date:   Fri Apr 24 15:00:44 2015 -0700
+
+    HIVE-10312: SASL.QOP in JDBC URL is ignored for Delegation token Authentication (Mubashir via Xuefu)
+    
+    (cherry picked from commit 512df30911320d344d01ffd68f809de33d7303b4)
+
+commit 5359f83738e4a1f5c40a4e8b71b3500145ab4889
+Author: Chao Sun <sunchao@apache.org>
+Date:   Tue Apr 28 09:39:18 2015 -0700
+
+    HIVE-10476 - Hive query should fail when it fails to initialize a session in SetSparkReducerParallelism [Spark Branch] (Chao, reviewed by Rui)
+
+commit 8c11e8e42726f7013e6fd7923cc016047c10847e
+Author: Chao Sun <sunchao@apache.org>
+Date:   Fri Apr 24 15:16:36 2015 -0700
+
+    HIVE-10434 - Cancel connection when remote Spark driver process has failed [Spark Branch] (Chao, reviewed by Marcelo)
+
+commit 78d18c8bcedfc1acb070c22f3871285bd4a81d18
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Fri Apr 24 12:37:29 2015 -0700
+
+    HIVE-10473 Spark client is recreated even spark configuration is not changed (Jimmy, reviewed by Szehon)
+
+commit 4b661d162bbed84d33e63d526f9721f54689be6e
+Author: Szehon Ho <szehon@apache.org>
+Date:   Fri Apr 17 18:43:08 2015 +0000
+
+    HIVE-10324 : Hive metatool should take table_param_key to allow for changes to avro serde's schema url key (Ferdinand Xu via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1674379 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 7047ea0fde688dd2c9d0d12c9f3cb91825732878
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Mon Apr 13 14:06:40 2015 -0500
+
+    CLOUDERA-BUILD: CDH-25465: Hive EXPORT using MR1 in CDH 5.3.2 fails when 'distcp' is triggered
+
+commit b8be3ebbacb558a930bcd7c57a30b66871d8bc4f
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Mon Apr 13 11:34:26 2015 -0700
+
+    PROPOSED CDH-26961: HIVE-10304: Add deprecation message to HiveCLI
+
+commit 6df15e5a0cf7f52dfb739959a9c6c61025655adc
+Author: Szehon Ho <szehon@apache.org>
+Date:   Fri Apr 10 19:34:19 2015 +0000
+
+    HIVE-10291 : Hive on Spark job configuration needs to be logged [Spark Branch] (Szehon, reviewed by Chengxiang and Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1672733 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 10dbc389ebe1cfedefc9d7af6f25a1482b92aa1c
+Author: spena <spena@unknown>
+Date:   Fri Apr 10 17:10:45 2015 +0000
+
+    HIVE-10202 Beeline outputs prompt+query on standard output when used in non-interactive mode (Naveen Gangam via Sergio Pena)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1672702 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 1ad5908383153fdbcc433cc33136820370dce2bd
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Fri Mar 27 16:19:48 2015 +0000
+
+    HIVE-10087: Beeline's --silent option should suppress query from being echoed when running with -f option (Naveen via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1669615 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 5fddbfdf45684554039810a02eceb1a25b200926
+Author: Szehon Ho <szehon@apache.org>
+Date:   Thu Apr 9 19:14:46 2015 +0000
+
+    CDH:26879 : HIVE-10206 : Improve Alter Table to not initialize Serde unnecessarily (Szehon, reviewed by Chao and Jimmy Xiang)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1672464 13f79535-47bb-0310-9956-ffa450edef68
+
+commit e47ae6920b785227f3546ec98d70787f932db9ec
+Author: Sun Chao <sunchao@apache.org>
+Date:   Tue Apr 7 22:39:27 2015 +0000
+
+    HIVE-10098 - HS2 local task for map join fails in KMS encrypted cluster (Yongzhi via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1671964 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 6c709bd1c953b39f89a9f264d80a27b65a3abbf9
+Author: Jimmy Xiang <jxiang@apache.org>
+Date:   Mon Apr 6 16:19:57 2015 +0000
+
+    HIVE-10146: Not count session as idle if query is running
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1671573 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 2aae581a1bd99c2d4ff5455a68cb6aa6ee04fe02
+Author: Jimmy Xiang <jxiang@apache.org>
+Date:   Fri Apr 3 15:20:37 2015 +0000
+
+    HIVE-10108: Index#getIndexTableName() returns db.index_table_name
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1671087 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 08e7b4ecafb405b596ed4355f20495fc27f4807d
+Author: Szehon Ho <szehon@apache.org>
+Date:   Sat Mar 28 01:39:22 2015 +0000
+
+    HIVE-10093 : Unnecessary HMSHandler initialization for default MemoryTokenStore on HS2 (Aihua Xu via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1669725 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 732b75f3ad9dc4409d04524072bc9d099e96b960
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Fri Mar 27 05:10:53 2015 +0000
+
+    HIVE-10085 : Lateral view on top of a view throws RuntimeException (Aihua Xu via Ashutosh Chauhan)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1669513 13f79535-47bb-0310-9956-ffa450edef68
+    
+    Conflicts:
+    	ql/src/java/org/apache/hadoop/hive/ql/optimizer/ColumnPrunerProcFactory.java
+
+commit a2816e79081f128660cdab8277c23896d5ffd12c
+Author: Szehon Ho <szehon@apache.org>
+Date:   Mon Mar 30 21:29:26 2015 +0000
+
+    HIVE-10143 : HS2 fails to clean up Spark client state on timeout [Spark Branch] (Marcelo Vanzin via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1670202 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 6892bd42690e39e683ea09b0d6784147a9a04b73
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Mon Mar 30 14:27:10 2015 -0500
+
+    CDH-26015: HIVE-10086: Parquet file using column index access is throwing error in Hive
+
+commit 775ab1f13f146737edf35d13e35e108833d2bffc
+Author: chengxiang <chengxiang@unknown>
+Date:   Fri Mar 27 06:36:41 2015 +0000
+
+    HIVE-10073:Runtime exception when querying HBase with Spark [Spark Branch](Jimmy Xiang via chengxiang)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1669518 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 4457aad2313c472b9114a56c3e9479a2124eaf5b
+Author: sunchao <sunchao@unknown>
+Date:   Thu Mar 26 16:38:33 2015 +0000
+
+    HIVE-9839 - HiveServer2 leaks OperationHandle on async queries which fail at compile phase (Nemon via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1669367 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 1898e6d42721170a2c4ea595793e6818f4541cbe
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Tue Feb 10 00:46:21 2015 +0000
+
+    HIVE-9228 : Problem with subquery using windowing functions (Navis via Ashutosh Chauhan)
+
+commit a95323658394f0ac95c2ec9a27268dbd694369ae
+Author: Szehon Ho <szehon@apache.org>
+Date:   Fri Mar 20 00:01:01 2015 +0000
+
+    HIVE-10023 : Fix more cache related concurrency issue [Spark Branch] (Jimmy Xiang via Szehon)
+
+commit 8219b37685be94bd2d5204b99a451267d0031076
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Thu Mar 19 00:22:42 2015 +0000
+
+    HIVE-10009: LazyObjectInspectorFactory is not thread safe [Spark Branch] (Jimmy via Xuefu)
+
+commit 05dbc787f257f305e7d9dd15a8014ecfc3d7226b
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed Mar 18 16:30:36 2015 -0500
+
+    CDH-26192 HIVE-9994: Hive query plan returns sensitive data to external applications like Navigator
+
+commit 684683e58bdec5c1dee6318cbe04c9a85a682100
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed Mar 18 09:13:31 2015 -0500
+
+    CDH-26183 Cannot do a SELECT on external tables that are on S3 due to Encryption error
+
+commit 979af20429959d0922c707937af1ade2087fe267
+Author: Szehon Ho <szehon@apache.org>
+Date:   Tue Mar 17 20:24:56 2015 +0000
+
+    HIVE-9993 : Retrying task could use cached bad operators [Spark Branch] (Jimmy Xiang via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1667392 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 645057abfa72f9a5e844ba86168e48a37912b886
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Fri Mar 13 18:44:55 2015 +0000
+
+    HIVE-9920: DROP DATABASE IF EXISTS throws exception if database does not exist (Chaoyu via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1666539 13f79535-47bb-0310-9956-ffa450edef68
+
+commit aace771dfc2abe7cfd0d40b632d951e9f1047649
+Author: Chao Sun <sunchao.chris@gmail.com>
+Date:   Mon Mar 16 18:33:01 2015 -0700
+
+    HIVE-9666: Improve some qtests (Reviewed by Xuefu)
+
+commit 357a7567d42982a28258a658dbb3cf34509e09fd
+Author: Jenkins slave <kitchen-build@cloudera.com>
+Date:   Mon Mar 16 10:46:01 2015 -0700
+
+    Preparing for CDH5.4.1
+
+commit c99c021ea4c7b91e94f0cc332b85c24af5cbc878
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Sat Mar 14 13:18:28 2015 +0000
+
+    HIVE-9961: HookContext for view should return a table type of VIRTUAL_VIEW (Szehon via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1666682 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 3f24934d207d8bcf5e3ad5b660d529970a5db20d
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Mon Mar 16 11:25:30 2015 -0500
+
+    CDH-26049 sensitive data redaction: data appears in name of mapreduce job
+
+commit f3905e889709b8605a5051826c3546c56a28fd21
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Fri Mar 13 15:03:05 2015 -0700
+
+    CDH-26107: Fix Test overridden_confs
+
+commit 1397b95cc41592e8caa1b2751d937c0ceb6a2d90
+Author: Chao Sun <sunchao.chris@gmail.com>
+Date:   Thu Mar 12 19:41:48 2015 -0700
+
+    CDH-25665 - Investigate test failures for MR2
+
+commit 6a98ef2cb237889de8a0cdd52e54431cf3ed2efb
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Thu Mar 12 14:40:58 2015 -0700
+
+    CDH-26002: Revert "HIVE-8131 - Support timestamp in Avro (Ferdinand Xu via Brock)"
+    
+    This reverts commit 2680289fb7272fd5bae858f32dcb7e22106ae7fc.
+    
+    Conflicts:
+    	ql/src/test/queries/clientpositive/avro_timestamp.q
+    	ql/src/test/results/clientpositive/avro_timestamp.q.java1.7.out
+
+commit f29338ee70d1b9a38b675fae0544a448b7874ade
+Author: Prasad Mujumdar <prasadm@cloudera.com>
+Date:   Thu Mar 12 16:55:35 2015 -0700
+
+    PROPOSED - CDH-25479: Backport HIVE-9828: Semantic analyzer does not capture view parent entity for tables referred in view with union all
+
+commit 173db982245efdb36dd6ac330ef32203be470bd2
+Author: ctang <ctang@cloudera.com>
+Date:   Thu Mar 12 15:31:14 2015 -0400
+
+    CDH-25799:Proposed HIVE-9866 - Changing a column's type doesn't change column stats type in metastore
+
+commit 8dc8d4a902b3a4ba6477546227b2ce5124820708
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Thu Mar 12 10:34:25 2015 -0700
+
+    CDH-26032 Fix test failure runtime_skewjoin_mapjoin_spark.q
+
+commit 06f54323cd1701de8f1a5c976dd5a65eb1de1373
+Author: sunchao <sunchao@unknown>
+Date:   Thu Mar 12 16:04:02 2015 +0000
+
+    HIVE-9929 - StatsUtil#getAvailableMemory could return negative value (Jimmy via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1666231 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 44630050c78c600ecb2f563d25f32e81fa6bd924
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Thu Mar 12 12:56:32 2015 +0000
+
+    HIVE-9877: Beeline cannot run multiple statements in the same row (Chaoyu via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1666171 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 2c0ebd09cfa06d58f3941cce4b420f84769969d8
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Thu Mar 12 03:38:01 2015 +0000
+
+    HIVE-9935: Fix tests for java 1.8 [Spark Branch] (Jimmy via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1666072 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 4b16be356982e2169a6099019220436901b75806
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Fri Mar 6 22:56:10 2015 +0000
+
+    HIVE-9620: Cannot retrieve column statistics using HMS API if column name contains uppercase characters (Chaoyu via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1664755 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 1f897b4ce788051b2b2c78a81f9348e0260a164e
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Wed Mar 11 14:03:41 2015 +0000
+
+    HIVE-9871: Print spark job id in history file [spark branch] (Chinna via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1665876 13f79535-47bb-0310-9956-ffa450edef68
+
+commit b14052d1477b626a283f9aec57b2a93c83c67f44
+Author: sunchao <sunchao@unknown>
+Date:   Wed Mar 11 23:09:41 2015 +0000
+
+    HIVE-9916 - Fix TestSparkSessionManagerImpl [Spark Branch] (Chao via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1666034 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 12946cc2751cbec09ca96037b81aad1793695e9b
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Wed Mar 11 11:58:44 2015 -0700
+
+    CDH-25991 Hive on MR2 doesn't set mapreduce.framework.name
+
+commit 9606f37a420d59b06e1ad0f3f8e7eca2a0074f66
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Wed Mar 11 14:10:26 2015 +0000
+
+    HIVE-9659: 'Error while trying to create table container' occurs during hive query case execution when hive.optimize.skewjoin set to 'true' [Spark Branch] (Rui via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1665877 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 701594c1a3ad8df80fe0486cc559a99aa5ae8a0c
+Author: lirui <lirui@unknown>
+Date:   Mon Mar 9 13:14:03 2015 +0000
+
+    HIVE-9855: Runtime skew join doesn't work when skewed data only exists in big table (Rui reviewed by Xuefu) merged from trunk
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1665227 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 357c0e5cdc2638016ad17800fb9d1c7cd21cfd7c
+Author: sunchao <sunchao@unknown>
+Date:   Tue Mar 10 16:54:17 2015 +0000
+
+    HIVE-9601 - New Beeline queries will hang If Beeline terminates in-properly [Spark Branch] (Jimmy via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1665615 13f79535-47bb-0310-9956-ffa450edef68
+
+commit c12374b786913ac3219927f7122c43bc6b387bb1
+Author: sunchao <sunchao@unknown>
+Date:   Mon Mar 9 23:37:19 2015 +0000
+
+    HIVE-9902 - Map join small table files need more replications [Spark Branch] (Jimmy via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1665384 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 8dd029f55521455a2ab6445ae491db399d878396
+Author: Chao Sun <sunchao.chris@gmail.com>
+Date:   Mon Mar 9 15:37:12 2015 -0700
+
+    CDH-25867 - Hive on Spark fails when spark.master is set to local
+
+commit 3fa3db7a46219dde87161cf7fe06797c63852662
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Fri Mar 6 22:43:26 2015 +0000
+
+    HIVE-9882: Add jar/file doesn't work with yarn-cluster mode [Spark Branch] (Rui via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1664747 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 067cf4546a37cf7f13d6a34e252ef7b8ee1264b0
+Author: lirui <lirui@unknown>
+Date:   Fri Mar 6 05:55:45 2015 +0000
+
+    HIVE-9860: MapredLocalTask/SecureCmdDoAs leaks local files (Brock via Rui)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1664548 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit c2a847903d85a0d982a63bdc7788134687dca3c8)
+
+commit 7a4ecc5d55e2ca80730c8badef669d7d0366b203
+Author: Brock Noland <brock@apache.org>
+Date:   Fri Mar 6 02:16:27 2015 +0000
+
+    HIVE-9872 - Making yarn-cluster default for Hive on Spark [Spark Branch] (Chao via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1664541 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit c0d6a6e08907a0ad3f29af58235a4902e9276a1b)
+
+commit ea0257e1ab7adf5489353c3306b3b00474645248
+Author: Brock Noland <brock@apache.org>
+Date:   Fri Feb 27 22:49:29 2015 +0000
+
+    HIVE-9803 - SparkClientImpl should not attempt impersonation in CLI mode [Spark Branch] (Brock via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1662841 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 9f1cceaa7068c893ab2c0980268c64a75f3bf298)
+
+commit c61d62a70a27834e72e23f607975f9a102e0d188
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Thu Mar 5 14:28:14 2015 +0000
+
+    HIVE-9788: Make double quote optional in tsv/csv/dsv output (Ferdinand via Xuefu, Reviewed by Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1664354 13f79535-47bb-0310-9956-ffa450edef68
+
+commit c51282f2f0a2f7b96aaf4b0446541801e470ce66
+Author: Vaibhav Gumashta <vgumashta@apache.org>
+Date:   Tue Mar 3 18:38:56 2015 +0000
+
+    HIVE-9831: HiveServer2 should use ConcurrentHashMap in ThreadFactory (Vaibhav Gumashta reviewed by Thejas Nair)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1663762 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit ea810b38b3ef65fbd831c41722e2ca6e51801b54)
+
+commit f6b59a2cc8f0acdf7fd258522d71f16b6912d7d0
+Author: sunchao <sunchao@unknown>
+Date:   Thu Mar 5 17:08:05 2015 +0000
+
+    HIVE-9861 - Add spark-assembly on Hive's classpath [Spark Branch] (Jimmy via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1664419 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 218ebea0363964d8fd5853600e53a47d394e62b9
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Mar 4 16:17:13 2015 -0800
+
+    CDH-25621 - Hive on MR throws DeprecatedParquetHiveInput exception
+
+commit f2f9faf95a86b271a7d1f42aebd7ac99409fa081
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Wed Mar 4 11:02:21 2015 -0800
+
+    CDH-25319 Hive - Build all C5 components with -source/-target 1.7
+
+commit 236da303e42b703a5bd3f5129ba24b1f8766bc85
+Author: sunchao <sunchao@unknown>
+Date:   Wed Mar 4 18:07:13 2015 +0000
+
+    HIVE-9847 - Hive should not allow additional attemps when RSC fails [Spark Branch] (Jimmy via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1664090 13f79535-47bb-0310-9956-ffa450edef68
+
+commit c2c215cf8027eab41ea9b20c875917cdb9dbf57c
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Tue Mar 3 22:35:46 2015 +0000
+
+    HIVE-9830: Map join could dump a small table multiple times [Spark Branch] (Jimmy via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1663817 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 0ee3545420e0dfa3f75d520b66ea8a31a910fc3d
+Author: Brock Noland <brock@apache.org>
+Date:   Sun Mar 1 19:08:50 2015 +0000
+
+    HIVE-9823 - Load spark-defaults.conf from classpath [Spark Branch] (Brock via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1663147 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 160d2dfe0e75cb9db50533f6c3ef80d27cd714c2)
+
+commit e509fb23f2f9dfaffd84909ae71cf9f718d971b2
+Author: sunchao <sunchao@unknown>
+Date:   Sat Feb 28 00:18:39 2015 +0000
+
+    HIVE-9804 - Turn on some kryo settings by default for Spark [Spark Branch] (Jimmy via Chao)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1662861 13f79535-47bb-0310-9956-ffa450edef68
+
+commit f93fb113e226c26f5036b4e79f3baca987fc1994
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Fri Feb 27 18:24:46 2015 +0000
+
+    HIVE-9781: Utilize spark.kryo.classesToRegister [Spark Branch] (Jimmy via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1662775 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 586ab5c8aa158065797e271e852e6016d4012e37
+Author: Brock Noland <brock@apache.org>
+Date:   Fri Feb 27 18:36:39 2015 +0000
+
+    CDH-25350/HIVE-9770 - Beeline ignores --showHeader for non-tablular output formats i.e csv,tsv,dsv (Naveen Gangam via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1662780 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 76a000c2166a7107884c89cddb9a5f58fe535519
+Author: Brock Noland <brock@apache.org>
+Date:   Fri Feb 27 18:35:12 2015 +0000
+
+    HIVE-9755 - Hive built-in "ngram" UDAF fails when a mapper has no matches. (Naveen Gangam via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1662779 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 1f36e74fd569a454daa2ffa10d1331d46f6d1e9c
+Author: Brock Noland <brock@apache.org>
+Date:   Fri Feb 27 18:40:01 2015 +0000
+
+    HIVE-9793 - Remove hard coded paths from cli driver tests (Brock via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1662781 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit f3e57ba4f273cf53c56ceb6298d928390bb2b2e9)
+
+commit ae8a9cc4111b86f17eee33435e6e66607560bce9
+Author: Brock Noland <brock@apache.org>
+Date:   Fri Feb 27 10:38:17 2015 -0800
+
+    CDH-25588 - Fix MR1 tests due to HIVE-7271 - Speed up unit tests
+
+commit 83a671c4d0079ed2f08eec6c00c43f469735105f
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Tue Feb 24 11:59:23 2015 -0800
+
+    CDH-25471 Investigate unit tests failures on cdh5-1.1.0 - [parquet_external_time]
+
+commit 0e38bc30c6d8cda3a2f35623d61c347329e8a9d0
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Thu Feb 26 09:49:54 2015 -0600
+
+    CDH-25473 Investigate unit tests failures on cdh5-1.1.0 - [list_bucket_dml_10, outer_join_ppr, vector_cast_constant]
+
+commit 9584a1a8af7b4daa77f2cb78efeeeb15eed61a44
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 25 23:18:18 2015 -0800
+
+    CDH-25569 - Update *hadoop20 .q files
+
+commit d9e64b85ec0bf2eceebaa2c3656be9d61741e23b
+Author: Brock Noland <brock@apache.org>
+Date:   Mon Feb 23 02:44:47 2015 +0000
+
+    HIVE-9671 - Support Impersonation [Spark Branch] (Brock via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1661599 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit fd0f638a8d481a9a98b34d3dd08236d6d591812f)
+
+commit 8e54ac0b97729f44f05c457cf01f78cebe41181a
+Author: Brock Noland <brock@apache.org>
+Date:   Sat Feb 21 01:21:31 2015 +0000
+
+    HIVE-9726 - Upgrade to spark 1.3 [Spark Branch]
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1661265 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 88996a87f7a784f1385b238081f5ed9ab13dcb93)
+    
+    Conflicts:
+    	pom.xml
+
+commit b6cf85445ab311a4996c2ca5ea3171c9066d39f5
+Author: Chao Sun <sunchao.chris@gmail.com>
+Date:   Wed Feb 25 15:10:09 2015 -0800
+
+    HIVE-9561 - SHUFFLE_SORT should only be used for order by query [Spark Branch] (Rui Li via Xuefu)
+
+commit 759af07ac9bfc6a9e1c9d97dc3b7e4e4fdef51c1
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Sat Feb 7 19:51:00 2015 +0000
+
+    HIVE-9517: UNION ALL query failed with ArrayIndexOutOfBoundsException [Spark Branch] (Chao via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1658102 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 5b05897f7ac1c2ff2edc174774bb19b09ac0d4e1
+Author: sunchao <sunchao@unknown>
+Date:   Tue Feb 24 18:42:57 2015 +0000
+
+    HIVE-9655 - Dynamic partition table insertion error (Chao via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1662079 13f79535-47bb-0310-9956-ffa450edef68
+
+commit fe81ab2ce78a554e5e3fde7158315936037a6130
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 25 00:23:25 2015 +0000
+
+    HIVE-9716 - Map job fails when table's LOCATION does not have scheme (Yongzhi Chen via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1662146 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 1f843de83535a7fe1aaa4d6856fa4e7305f4d74c
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Tue Feb 17 06:59:49 2015 +0000
+
+    HIVE-9696: Address RB comments for HIVE-9425 [Spark Branch] (Rui via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1660304 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit f346a69d401493877d611f29d1ef2c9da6c108ea)
+
+commit f83774e406973f8d96bf1c5f7dd6fd2a16a75a40
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Tue Feb 10 19:38:40 2015 +0000
+
+    HIVE-9574: Lazy computing in HiveBaseFunctionResultList may hurt performance [Spark Branch] (Jimmy via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1658786 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 3e7a258f910c78110405c3564d1ab3122281ae27)
+
+commit 9b1d4e2b3a72b386ffb5a45c7055794314be3a08
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 24 15:42:53 2015 -0800
+
+    CDH-25521 - Fix TestSSL.testSSLDeprecatConfig a CDH-only test
+
+commit 2c5e7445ba05123a63a7a74e9a4c44f03e3a0f56
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 24 17:24:38 2015 +0000
+
+    HIVE-9749 - ObjectStore schema verification logic is incorrect (Brock via Prasad)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1662034 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 3c0eebbf889430abdc5bfdeaf331fa2610f4f7cb)
+
+commit c10fd08b0cc1fa0e1b5eb45ee2e6f5b62699e91a
+Author: Jimmy Xiang <jxiang@cloudera.com>
+Date:   Mon Feb 23 16:25:18 2015 -0800
+
+    CDH-25481 Investigate unit tests failures on cdh5-1.1.0 - [join38, subquery_in]
+
+commit 1663b4d6b5cafdddc8f1d4bf5b9af4a982c17695
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 24 09:19:06 2015 -0800
+
+    CDH-24225 - Hive Log Redaction work
+
+commit d022dc86eea35d0aa3b252a72ad8fecabe025ea0
+Author: Brock Noland <brock@apache.org>
+Date:   Sat Feb 21 15:26:31 2015 -0800
+
+    CLOUDERA-BUILD: CDH-25431 - hive-unit needs hadoop-common tests as well
+
+commit 8c05249b475d399af59ad2ac4ed304a3491a847b
+Author: Brock Noland <brock@apache.org>
+Date:   Sat Feb 21 15:25:48 2015 -0800
+
+    CLOUDERA-BUILD: CDH-25433 - getHadoopConfNames not correct under MR1
+
+commit 1746b3b657e7328d5f6f73c50c9377501199582d
+Author: Brock Noland <brock@apache.org>
+Date:   Thu Feb 19 14:59:48 2015 -0800
+
+    CLOUDERA-BUILD: CDH-25376 - we need special rules to exclude/include files since version string does not work
+
+commit a362698561bdb269a071fa0571e147c56232076c
+Author: Brock Noland <brock@apache.org>
+Date:   Thu Feb 19 09:13:00 2015 -0800
+
+    CLOUDERA-BUILD: CDH-25351 commit for Hadoop23Shim.isLocalMode is incorrect (was: hs2 + beeline: select count(*) from a tables, encountered java.lang.NullPointerException from mr jobs)
+
+commit 908d173750203289b8b8f0b417ff932020ce704b
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 18 12:38:09 2015 -0800
+
+    CDH-25303 - TestHBaseSerDe requires hadoop-common test for MR1
+
+commit 97cc5605741ea063fec8afd44c8d109f6019ad06
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 18 12:37:47 2015 -0800
+
+    CDH-25298 - Exclude MR jars from accumulo mini-cluster when under MR1
+
+commit b6da1186ba373abe307634f3a0cdc06b470ebe37
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 18 12:28:51 2015 -0800
+
+    CLOUDERA-BUILD: fix spark.version for tarbal
+
+commit 84bed364cee20283bec519baac5fca1331c43e85
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 18 16:23:36 2015 +0000
+
+    HIVE-9706 - HBase handler support for snapshots should confirm properties before use (Sean Busbey via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1660663 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 3cc5b940d86e09a2fa276f7d392842b094a319fd)
+    
+    Reason: Bug
+    Author: Sean Busbey
+    Ref: CDH-25263
+
+commit 70e1e2938f5b62b6dbba2f9c7a361005ec87e48f
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 17 13:02:44 2015 -0800
+
+    CLOUDERA-BUILD: CDH-25276 - Remove USING BTREE from MySQL index statements
+
+commit aa5caca686f3886b1ef64e424e4d4b34b6d2ce29
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 17 08:04:26 2015 -0800
+
+    CDH-25258 - CLOUDER-BUILD: Fix Hadoop23Shims.isLocalMode
+
+commit 9b44d6cc5afa78251bd613a0605845c2939ce369
+Author: Brock Noland <brock@apache.org>
+Date:   Fri Feb 13 15:23:29 2015 -0800
+
+    CLOUDERA-BUILD: move cdh 5.4 to cdh.thrift.version
+
+commit 65d469fa33014e43753dfeb8d3f63ba2cf4915d8
+Author: Brock Noland <brock@apache.org>
+Date:   Thu Feb 12 16:15:14 2015 +0000
+
+    HIVE-9622 - Getting NPE when trying to restart HS2 when metastore is configured to use org.apache.hadoop.hive.thrift.DBTokenStore (Aihua via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1659302 13f79535-47bb-0310-9956-ffa450edef68
+
+commit cd4b9b52e67dce04ca46c310c6f53b052acb0926
+Author: Szehon Ho <szehon@apache.org>
+Date:   Thu Feb 12 21:18:25 2015 +0000
+
+    HIVE-9023 : HiveHistoryImpl relies on removed counters to print num rows (Naveen Gangam via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1659403 13f79535-47bb-0310-9956-ffa450edef68
+
+commit 13e3fd3cd08146ac573714f318c354d497683100
+Author: Arun Suresh <asuresh@cloudera.com>
+Date:   Thu Oct 30 13:46:14 2014 -0700
+
+    CLOUDERA_BUILD: CDH-22860 - Update HIVE metastore startup scripts to add sentry plugin to classpath
+    
+    (cherry picked from commit df7d140c2a3bc39807c510e50b010fcf90b615fd)
+
+commit 7b6432838a35c7726dbd1a72cbb18d7ef28dbaf1
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 11 09:53:11 2015 -0800
+
+    HIVE-9648 - Null check key provider before doing set (Brock reviewed by Chao)
+
+commit 7ee10734d084ba84c0f72f49ce563ea5058e12a4
+Author: Prasad Mujumdar <prasadm@cloudera.com>
+Date:   Mon May 12 18:32:39 2014 -0700
+
+    CLOUDERA-BUILD:  CDH-19069:Hive script should include jar from SENTRY_HOME into classpath
+    
+    (cherry picked from commit 1a65cf6fce3818876cbfef9e1c6a57d5cadf56c0)
+    (cherry picked from commit 46f8e7d72f4b7ace1f81ec081017c650ebfade30)
+    
+    Conflicts:
+    	bin/ext/hiveserver2.sh
+
+commit 9317c9d6eba6d1d6b5eca34efff36d11cbe43d5f
+Author: Brock Noland <brock@apache.org>
+Date:   Sat Feb 7 00:14:56 2015 +0000
+
+    HIVE-9411 - Improve error messages in TestMultiOutputFormat (Brock via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1657999 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit bca37f9d69fc48e5eaa3a76c1957bd4ad04b439a)
+
+commit 60936d96f3dc4819600d1ccca29465a8b0f6323e
+Author: Thejas Nair <thejas@apache.org>
+Date:   Fri Feb 6 19:43:16 2015 +0000
+
+    HIVE-9496 : Slf4j warning in hive command (Alexander Pivovarov via Thejas Nair)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1657934 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 0cd7670e8afa5ed39f230134c8547274d0881188)
+
+commit 649bd861352a22e2482bea9f40b9dd6927045b9e
+Author: Vaibhav Gumashta <vgumashta@apache.org>
+Date:   Thu Feb 5 19:52:16 2015 +0000
+
+    HIVE-7175: Provide password file option to beeline (Dr. Wendell Urth, Vaibhav Gumashta reviewed by Larry McCay, Robert Justice, Thejas Nair)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1657675 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 26e136a0f68bd0afaeed6ba1ebd2cd1be25c7fe3)
+
+commit f50daf94625f475d5600b77d5c2fd5b32a44ed68
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Feb 4 21:55:58 2015 +0000
+
+    HIVE-8949 - Test for PARQUET-26 (Ryan Blue via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1657414 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 8b403b12c017ba5792e73243da633dc8c3f0092f)
+
+commit fd6921c10d965b47d112aaadee6fc8f26b89fc9e
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 3 22:58:59 2015 +0000
+
+    HIVE-8379 - NanoTimeUtils performs some work needlessly (Sergio Pena via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1656945 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 5dbbc258e2bbd1565e721c5ed46fc4a1f08681d4)
+
+commit 9b2b37062b3edf6a551a630fa5e7940d3cfe9e63
+Author: Prasanth J <prasanthj@apache.org>
+Date:   Tue Feb 3 18:34:35 2015 +0000
+
+    HIVE-9471: Bad seek in uncompressed ORC, at row-group boundary. (Mithun Radhakrishnan reviewed by Prasanth Jayachandran)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1656881 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 415467f628f8122be2ee73fd59562792b934d9f6)
+
+commit 98d64bcd51a26117f66d9569c16c708e7be8fb40
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 3 01:56:07 2015 +0000
+
+    HIVE-9303 - Parquet files are written with incorrect definition levels (Sergio Pena via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1656618 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 85fee991fa60c1b1e3b0e0373bc6a9806064c0a5)
+
+commit f835594af768310922ae397e39911444889f4143
+Author: Brock Noland <brock@apache.org>
+Date:   Mon Jan 19 01:57:12 2015 -0800
+
+    Revert "HIVE-7313: Memory & SSD storage policies for temporary tables. (Gopal V, reviewed by Gunther Hagleitner)"
+    
+    This reverts commit 8541eb6a0452dcd726a68c44ff5e2cc80d77d101.
+    
+    (cherry picked from commit 44e9780f22958790c09e6ff6c16436e8571f4a6d)
+    
+    Conflicts:
+    	shims/0.20S/src/main/java/org/apache/hadoop/hive/shims/Hadoop20SShims.java
+    	shims/0.23/src/main/java/org/apache/hadoop/hive/shims/Hadoop23Shims.java
+
+commit fad492051ef070fd5ee72771a37cb116f230de5f
+Author: Sean Busbey <busbey@cloudera.com>
+Date:   Sat Jan 31 14:43:25 2015 -0600
+
+    CLOUDERA-BUILD hbase handler should list dependency on high-scale-lib.
+    
+    Ref: CDH-24808
+    (cherry picked from commit c3f847a58abc115c2fa1f28b4b14f7a7815ba41f)
+    
+    Conflicts:
+    	pom.xml
+
+commit cc794f8c80095eab0db0e2bba71d55b48e7fd2cf
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Jan 28 15:45:05 2015 -0800
+
+    CDH-24369 - Do not throw an exception if a hive property does not exist
+    
+    (cherry picked from commit ddb57b5936d2c0f70c54f2ef91a767da8b17f273)
+
+commit 590333e675ad0ef51351ac94d08ba3929047673e
+Author: Mohit Sabharwal <mohit@cloudera.com>
+Date:   Thu Aug 7 19:02:06 2014 -0700
+
+    CDH-20686: Forward port parquet-hive-bundle classes from CDH-16381
+    
+    (cherry picked from commit b6df686f670bce17b83e6bc4fa26540da48e07f1)
+    (cherry picked from commit 69803ff3a43d5f85a3182e9aa6eef0da9c93cb69)
+
+commit a0726db0aec7556b1e9014e568d970aa59293728
+Author: Szehon Ho <szehon@cloudera.com>
+Date:   Tue Jun 24 18:06:53 2014 -0700
+
+    CLOUDERA-BUILD: Build Hive Spark Branch on CDH5
+    
+    CDH-20058: Build Hive 0.13 branch on CDH5 components
+    
+    Conflicts:
+    	ant/pom.xml
+    	beeline/pom.xml
+    	cli/pom.xml
+    	common/pom.xml
+    	contrib/pom.xml
+    	hbase-handler/pom.xml
+    	hcatalog/core/pom.xml
+    	hcatalog/core/src/main/java/org/apache/hcatalog/mapreduce/MultiOutputFormat.java
+    	hcatalog/core/src/test/java/org/apache/hcatalog/mapreduce/TestMultiOutputFormat.java
+    	hcatalog/hcatalog-pig-adapter/pom.xml
+    	hcatalog/hcatalog-pig-adapter/src/main/java/org/apache/hcatalog/pig/HCatLoader.java
+    	hcatalog/hcatalog-pig-adapter/src/main/java/org/apache/hcatalog/pig/HCatStorer.java
+    	hcatalog/pom.xml
+    	hcatalog/server-extensions/pom.xml
+    	hcatalog/storage-handlers/hbase/pom.xml
+    	hcatalog/streaming/pom.xml
+    	hcatalog/webhcat/java-client/pom.xml
+    	hcatalog/webhcat/svr/pom.xml
+    	hwi/pom.xml
+    	itests/custom-serde/pom.xml
+    	itests/hcatalog-unit/pom.xml
+    	itests/hive-unit/pom.xml
+    	itests/pom.xml
+    	itests/qtest/pom.xml
+    	itests/test-serde/pom.xml
+    	itests/util/pom.xml
+    	itests/util/src/main/java/org/apache/hadoop/hive/ql/hooks/VerifyOverriddenConfigsHook.java
+    	jdbc/pom.xml
+    	metastore/pom.xml
+    	odbc/pom.xml
+    	packaging/pom.xml
+    	pom.xml
+    	ql/pom.xml
+    	serde/pom.xml
+    	service/pom.xml
+    	shims/0.20/pom.xml
+    	shims/0.20S/pom.xml
+    	shims/0.23/pom.xml
+    	shims/0.23/src/main/java/org/apache/hadoop/hive/shims/Hadoop23Shims.java
+    	shims/aggregator/pom.xml
+    	shims/common-secure/pom.xml
+    	shims/common/pom.xml
+    	shims/pom.xml
+    	testutils/pom.xml
+    
+    CLOUDERA-BUILD: CDH-16128: HiveServer2 does not provide the MR2 jobs IDs by default
+    
+    Conflicts:
+    	common/src/main/resources/hive-log4j.properties
+    
+    (cherry picked from commit c8b7dc21d5020205bf16c17157e376d9c93bf156)
+    
+    CLOUDERA-BUILD: CDH-19733: Set SENTRY_HOME from metastore script
+    
+    (cherry picked from commit 1bbc4f9978ed40b26c8ea6606e54fb1976ef45d9)
+    (cherry picked from commit d22ff3308ea5b43ff1c494d000b3ca4e36463a65)
+    
+    CLOUDERA-BUILD: CDH-16414 - Hadoop23 Shim uses Java 7 only constructor
+    
+    (cherry picked from commit 062bcceb8ea9f5c3ede3652ce03f0556490ae26b)
+    (cherry picked from commit 9be7140621aa7797abe2649002c2760fc2a038d3)
+    
+    CLOUDERA-BUILD: CDH-17152: Restore default RC file format serde to ColumnarSerde
+    
+    (cherry picked from commit 1304088fbd3f5c8f92b64c5db4d37b85ebf26ce6)
+    
+    Conflicts:
+    	conf/hive-default.xml.template
+    
+    (cherry picked from commit 8e005c4976b7145c10c6f97fa2c4b4ca7a0a5eab)
+    
+    Conflicts:
+    	common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+    	conf/hive-default.xml.template
+    
+    CLOUDERA-BUILD: CDH-17875: Deprecate HiveServer2 SSL configuration parameter
+    
+    (cherry picked from commit c98684a56c0944dd71c5d4d3bbc6d660bf4da8b2)
+    
+    Conflicts:
+    	itests/hive-unit/src/test/java/org/apache/hive/jdbc/TestSSL.java
+    
+    (cherry picked from commit 31096bc355d1050e3ebff19c905c8c722ec6d471)
+    
+    Conflicts:
+    	common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+    
+    CLOUDERA-BUILD: CDH-16507: Fix Hive MR2 test failures
+    
+    (cherry picked from commit 5298668593f3818233b39c59d1351a138952ec24)
+    
+    CLOUDERA-BUILD: CDH-16001 - QTest module under hadoop-1 is missing hadoop-common
+    
+    (cherry picked from commit 725155e2ea64f392a215b6991aca8d500dc056af)
+    
+    CLOUDERA-BUILD: CDH-16510 - Fix Hive MR1 test failures
+    
+    (cherry picked from commit 114165a67d19815b1915454257345ed886c2f054)
+    (cherry picked from commit 003905152884401b8d18452b1616790c1f27833b)
+    
+    CLOUDERA-BUILD: CDH-21747: Set the default authorization factory to disable built-in authorization
+    
+    (cherry picked from commit 1cc395263f16c7282ae37b266d7ab21f9396cdc0)
+    
+    Conflicts:
+    	common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+    	data/conf/hive-site.xml
+    
+    CLOUDERA-BUILD: CDH-21747: Set the default authorization factory to disable built-in authorization
+    
+    (cherry picked from commit 523f8358bbe097e51f7044b2672ade9061b36a87)
+    (cherry picked from commit 8cb92b79f97ab18a0ad7a54a55d4f071e0acbff7)
+    
+    Conflicts:
+    	accumulo-handler/pom.xml
+    	ant/pom.xml
+    	beeline/pom.xml
+    	cli/pom.xml
+    	common/pom.xml
+    	contrib/pom.xml
+    	hbase-handler/pom.xml
+    	hcatalog/core/pom.xml
+    	hcatalog/hcatalog-pig-adapter/pom.xml
+    	hcatalog/pom.xml
+    	hcatalog/server-extensions/pom.xml
+    	hcatalog/streaming/pom.xml
+    	hcatalog/webhcat/java-client/pom.xml
+    	hcatalog/webhcat/svr/pom.xml
+    	hwi/pom.xml
+    	itests/custom-serde/pom.xml
+    	itests/hcatalog-unit/pom.xml
+    	itests/hive-minikdc/pom.xml
+    	itests/hive-unit-hadoop2/pom.xml
+    	itests/hive-unit/pom.xml
+    	itests/pom.xml
+    	itests/qtest-spark/pom.xml
+    	itests/qtest/pom.xml
+    	itests/test-serde/pom.xml
+    	itests/util/pom.xml
+    	jdbc/pom.xml
+    	metastore/pom.xml
+    	odbc/pom.xml
+    	packaging/pom.xml
+    	pom.xml
+    	ql/pom.xml
+    	ql/src/java/org/apache/hadoop/hive/ql/io/IOContext.java
+    	serde/pom.xml
+    	service/pom.xml
+    	shims/0.20S/pom.xml
+    	shims/0.23/pom.xml
+    	shims/0.23/src/main/java/org/apache/hadoop/hive/shims/Hadoop23Shims.java
+    	shims/aggregator/pom.xml
+    	shims/common/pom.xml
+    	shims/pom.xml
+    	shims/scheduler/pom.xml
+    	spark-client/pom.xml
+    	testutils/pom.xml
+    
+    CLOUDERA-BUILD: hard code spark.version in tarball until CDH-24361 is fixed
+    
+    (cherry picked from commit 266330a94949f944c549706d908e8832b648b054)
+    
+    CLOUDERA-BUILD: Use new MRVersion class and fix SPARK_SUBMIT_CLASSPATH
+    
+    (cherry picked from commit 0370469e715a9acd578c5eafa8d5446720ceb809)
+    
+    CLOUDERA-BUILD: add apache snapshots repo
+    
+    (cherry picked from commit 812209a599a6082122fbb6aa3f893dd7d7b3a598)
+    
+    CLOUDERA-BUILD: Fixes to allow build to work with hadoop-1 for tests
+    
+    (cherry picked from commit 0bfd450327b33daf5aba82b7e17fa1debb883e86)
+    
+    CDH-17697 Analyze hive unit test failures for MR1
+    
+    Conflicts:
+    	ql/pom.xml
+    	serde/pom.xml
+    	hcatalog/core/pom.xml
+    	hcatalog/storage-handlers/hbase/pom.xml
+    	itests/hcatalog-unit/pom.xml
+    
+    (cherry picked from commit e5cd0fa9b55aca2eb57883bbe27586716f20e093)
+    
+    Conflicts:
+    	hcatalog/core/pom.xml
+    	hcatalog/storage-handlers/hbase/pom.xml
+    	hwi/pom.xml
+    	itests/hcatalog-unit/pom.xml
+    	ql/pom.xml
+    
+    (cherry picked from commit dce1606551208b015080a5bf9ed610743f0202d5)
+    
+    CLOUDERA-BUILD: Fix additional MR1 Use cases
+    
+    (cherry picked from commit 10cd9cbe00082cbc8ba3ab507dfedbe3662e78e9)
+    (cherry picked from commit cba3a4aa0bf911e547f8b462d91aad8360f567f6)
+
+commit ad6272d7132f778a5a60d54411eb4048a5f15146
+Author: Brock Noland <brock@apache.org>
+Date:   Sat Jan 31 19:05:56 2015 +0000
+
+    HIVE-9526 - ClassCastException thrown by HiveStatement (Ashish Singh via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1656238 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 90a9cce1e9853347d73c0bae1a30a49a31f106c1)
+
+commit fac57293fc94a47835de6bbe9e7e2db50a0ea7ac
+Author: Szehon Ho <szehon@apache.org>
+Date:   Fri Jan 30 07:49:08 2015 +0000
+
+    HIVE-9482 : Hive parquet timestamp compatibility (Szehon, reviewed by Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1655953 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 1ffa6236ce43202135aa52495d4af095a018fbd6)
+
+commit 3aa52f46d3533c834f5ca9ceec3b63e8050b0250
+Author: Ashutosh Chauhan <hashutosh@apache.org>
+Date:   Thu Jan 29 21:43:13 2015 +0000
+
+    HIVE-9498 : Update golden files of join38 & subquery_in on trunk due to 9327 (Ashutosh Chauhan via Prasanth J)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1655869 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit e4a6cf8ab9cdb158545470e9e705fb85ee4fa56d)
+
+commit f4146208962c8463648952cab11b1cdda87ef34f
+Author: Sushanth Sowmyan <khorgath@apache.org>
+Date:   Thu Jan 29 18:45:28 2015 +0000
+
+    HIVE-9501 : DbNotificationListener doesn't include dbname in create database notification and does not include tablename in create table notification (Alan Gates via Sushanth Sowmyan)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1655793 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 8a29303b07651db86de15bc1374c1ab0efb7a07c)
+
+commit 4cbd665e98b4d8bae92298daf22be3668bae912c
+Author: Thejas Nair <thejas@apache.org>
+Date:   Thu Jan 29 17:24:10 2015 +0000
+
+    HIVE-9489 : add javadoc for UDFType annotation (Thejas Nair, reviewed by Lefty Leverenz, Ashutosh Chauhan)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1655757 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 57a3fc8ed5157de55a6b18e46ac36446c0c31079)
+
+commit 7a1d6fec02616c1eca0e6f901c1b76c2a4d285fe
+Author: Sushanth Sowmyan <khorgath@apache.org>
+Date:   Wed Jan 28 23:58:34 2015 +0000
+
+    HIVE-9436 : RetryingMetaStoreClient does not retry JDOExceptions (Sushanth Sowmyan, reviewed by Thejas M Nair)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1655501 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit a1715dd657c4cd6198cc0d3665ebb81812f44a07)
+
+commit e1a2b882c474b4404ed33d72fe4dd2a25ac65e4f
+Author: Szehon Ho <szehon@apache.org>
+Date:   Wed Jan 28 23:40:05 2015 +0000
+
+    HIVE-9474 : truncate table changes permissions on the target (Aihua Xu via Szehon)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1655500 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 050a0bcb0bfd97b86b8dce5a279ad216751651e2)
+
+commit 77d095cca1383f9f235192517e250cc8aa3f26ce
+Author: Brock Noland <brock@apache.org>
+Date:   Wed Jan 28 19:12:15 2015 +0000
+
+    HIVE-9484 - ThriftCLIService#getDelegationToken does case sensitive comparison (Jimmy Xiang via Brock)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1655434 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 59206717608e360bf735f117875e7f55c189a83e)
+
+commit c6518d21e79ab7edb4e44df10f194c1d54142622
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Fri Jan 30 18:37:12 2015 +0000
+
+    HIVE-9192: One-pass SMB Optimizations [Spark Branch] (Szehon via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1656084 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit f19e5721dba67e2d7992f008d36e6b6ccf5c0875)
+
+commit 02ddb99ce924500f50c262caa29a77ca6a1a4697
+Author: Xuefu Zhang <xuefu@apache.org>
+Date:   Tue Jan 27 21:27:27 2015 +0000
+
+    HIVE-9379: Fix tests with some versions of Spark + Snappy [Spark Branch] (Brock via Xuefu)
+    
+    git-svn-id: https://svn.apache.org/repos/asf/hive/branches/spark@1655164 13f79535-47bb-0310-9956-ffa450edef68
+    (cherry picked from commit 3eef66db8fe1d698cd27f9b5ea4851971878c6b5)

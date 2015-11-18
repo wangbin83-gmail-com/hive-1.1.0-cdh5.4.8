@@ -1,0 +1,28 @@
+From 5d697469fa44235eaf210e3859723f2d02d0d4b8 Mon Sep 17 00:00:00 2001
+From: Reuben Kuhnert <reuben.kuhnert@cloudera.com>
+Date: Fri, 18 Sep 2015 18:55:46 -0500
+Subject: [PATCH 252/275] CDH-31712: Hive command is stuck loading.
+
+---
+ .../org/apache/hadoop/hive/ql/metadata/Hive.java   |    5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java b/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+index 1d8df48..53a8778 100644
+--- a/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
++++ b/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+@@ -201,9 +201,8 @@ private void registerAllFunctionsOnce() {
+     }
+   }
+ 
+-  public static void reloadFunctions() throws HiveException {
+-    Hive db = Hive.get();
+-    for (Function function : db.getAllFunctions()) {
++  public void reloadFunctions() throws HiveException {
++    for (Function function : getAllFunctions()) {
+       String functionName = function.getFunctionName();
+       try {
+         LOG.info("Registering function " + functionName + " " + function.getClassName());
+-- 
+1.7.9.5
+

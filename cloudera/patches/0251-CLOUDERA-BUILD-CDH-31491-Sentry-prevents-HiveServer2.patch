@@ -1,0 +1,38 @@
+From fdf8a81cdd0f6c94e0a6eabffc41f2600f69fae3 Mon Sep 17 00:00:00 2001
+From: Reuben Kuhnert <reuben.kuhnert@cloudera.com>
+Date: Fri, 18 Sep 2015 10:04:23 -0500
+Subject: [PATCH 251/275] CLOUDERA-BUILD: CDH-31491: Sentry prevents
+ HiveServer2 from showing permanent functions
+
+---
+ .../org/apache/hadoop/hive/ql/metadata/Hive.java   |   11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java b/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+index 6e00f83..1d8df48 100644
+--- a/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
++++ b/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+@@ -201,14 +201,15 @@ private void registerAllFunctionsOnce() {
+     }
+   }
+ 
+-  public void reloadFunctions() throws HiveException {
+-    for (Function function : getAllFunctions()) {
++  public static void reloadFunctions() throws HiveException {
++    Hive db = Hive.get();
++    for (Function function : db.getAllFunctions()) {
+       String functionName = function.getFunctionName();
+       try {
+         LOG.info("Registering function " + functionName + " " + function.getClassName());
+-        FunctionRegistry.registerPermanentFunction(FunctionUtils.qualifyFunctionName(
+-                    functionName, function.getDbName()), function.getClassName(), false,
+-                    FunctionTask.toFunctionResource(function.getResourceUris()));
++        FunctionRegistry.registerPermanentFunction(
++                FunctionUtils.qualifyFunctionName(functionName, function.getDbName()), function.getClassName(),
++                false, FunctionTask.toFunctionResource(function.getResourceUris()));
+       } catch (Exception e) {
+         LOG.warn("Failed to register persistent function " +
+                 functionName + ":" + function.getClassName() + ". Ignore and continue.");
+-- 
+1.7.9.5
+
