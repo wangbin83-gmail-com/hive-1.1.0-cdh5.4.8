@@ -123,10 +123,10 @@
     <guava.version>14.0.1</guava.version>
     <groovy.version>2.4.4</groovy.version>
     <hadoop-20S.version>${cdh.mr1.version}</hadoop-20S.version>
-    <hadoop-23.version>${cdh.hadoop.version}</hadoop-23.version>
+    <hadoop-23.version>2.5.0-cdh5.3.1</hadoop-23.version>
     <hadoop.bin.path>${basedir}/${hive.path.to.root}/testutils/hadoop</hadoop.bin.path>
     <hbase.hadoop1.version>${cdh.hbase.version}</hbase.hadoop1.version>
-    <hbase.hadoop2.version>${cdh.hbase.version}</hbase.hadoop2.version>
+    <hbase.hadoop2.version>0.98.6-cdh5.3.1</hbase.hadoop2.version>
     <high-scale-lib.version>1.1.1</high-scale-lib.version>
     <!-- httpcomponents are not always in version sync -->
     <httpcomponents.client.version>${cdh.httpcomponents.version}</httpcomponents.client.version>
@@ -175,23 +175,11 @@
   </properties>
 
   <repositories>
+    <repository>
+      <id>cloudera</id>
+      <url>http://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>
    <!-- This needs to be removed before checking in-->
-    <repository>
-      <id>cdh.releases.repo</id>
-      <url>https://repository.cloudera.com/content/groups/cdh-releases-rcs</url>
-      <name>CDH Releases Repository</name>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>cdh.snapshots.repo</id>
-      <url>https://repository.cloudera.com/content/repositories/snapshots</url>
-      <name>CDH Snapshots Repository</name>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
     <repository>
       <id>datanucleus</id>
       <name>datanucleus maven repository</name>

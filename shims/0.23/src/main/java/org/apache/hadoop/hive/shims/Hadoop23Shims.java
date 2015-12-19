@@ -520,14 +520,13 @@ public class Hadoop23Shims extends HadoopShimsSecure {
       boolean format,
       String[] racks) throws IOException {
     configureImpersonation(conf);
+
     MiniDFSCluster miniDFSCluster = new MiniDFSCluster(conf, numDataNodes, format, racks);
 
     // Need to set the client's KeyProvider to the NN's for JKS,
     // else the updates do not get flushed properly
-    KeyProvider keyProvider = miniDFSCluster.getNameNode().getNamesystem().getProvider();
-    if (keyProvider != null) {
-      miniDFSCluster.getFileSystem().getClient().setKeyProvider(keyProvider);
-    }
+    miniDFSCluster.getFileSystem().getClient().setKeyProvider(
+        miniDFSCluster.getNameNode().getNamesystem().getProvider());
 
     cluster = new MiniDFSShim(miniDFSCluster);
     return cluster;
@@ -845,7 +844,7 @@ public class Hadoop23Shims extends HadoopShimsSecure {
   }
 
   private boolean isMR2() {
-    return org.apache.hadoop.mapred.MRVersion.isMR2();
+    return true;
   }
 
   class ProxyFileSystem23 extends ProxyFileSystem {
@@ -1143,17 +1142,10 @@ public class Hadoop23Shims extends HadoopShimsSecure {
     try {
       Class clazzDistCp = Class.forName("org.apache.hadoop.tools.DistCp");
       Tool distcp;
-      if (org.apache.hadoop.mapred.MRVersion.isMR2()) {
-        Constructor c = clazzDistCp.getConstructor();
-        c.setAccessible(true);
-        distcp = (Tool)c.newInstance();
-        distcp.setConf(conf);
-      } else {
-        Constructor c = clazzDistCp.getConstructor(Configuration.class);
-        c.setAccessible(true);
-        distcp = (Tool)c.newInstance(conf);
-      }
-
+      Constructor c = clazzDistCp.getConstructor();
+      c.setAccessible(true);
+      distcp = (Tool)c.newInstance();
+      distcp.setConf(conf);
       rc = distcp.run(params);
     } catch (ClassNotFoundException e) {
       throw new IOException("Cannot find DistCp class package: " + e.getMessage());

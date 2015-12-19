@@ -157,11 +157,7 @@ public class MultiOutputFormat extends OutputFormat<Writable, Writable> {
     configsToMerge.put(ShimLoader.getHadoopShims().getHCatShim().getPropertyName(
         HadoopShims.HCatHadoopShims.PropertyName.CACHE_FILES), COMMA_DELIM);
     String fileSep;
-    if (org.apache.hadoop.mapred.MRVersion.isMR2()) {
-      fileSep = ",";
-    } else {
-      fileSep = System.getProperty("path.separator");
-    }
+    fileSep = ",";
     configsToMerge.put(ShimLoader.getHadoopShims().getHCatShim().getPropertyName(HadoopShims.HCatHadoopShims.PropertyName.CLASSPATH_ARCHIVES), fileSep);
     configsToMerge.put(ShimLoader.getHadoopShims().getHCatShim().getPropertyName(HadoopShims.HCatHadoopShims.PropertyName.CLASSPATH_FILES), fileSep);
   }
